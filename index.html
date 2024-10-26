@@ -1007,7 +1007,7 @@
                                 <br>
                                 يمكنك إنشاء Middleware يتأكد من أن المستخدم يبلغ 18 عامًا على الأقل: <br>
                                 // في ملف app/Http/Middleware/CheckAge.php <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     namespace App\Http\Middleware; <br>
                                     use Closure; <br>
                                     use Illuminate\Http\Request; <br>
@@ -1026,7 +1026,7 @@
                                 في
                                 <br>
                                 تعريف المسارات: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     Route::get('profile', function () { <br>
                                     // بعض التعليمات br
                                     })->middleware('checkAge');
@@ -1157,7 +1157,7 @@
                                 البيانات بداخلها. لنفترض أننا نريد إنشاء مستخدمين تجريبيين، يمكننا كتابة الكود التالي
                                 داخل دالة `run`: <br>
 
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function run()
                                     { <br>
                                     DB::table('users')->insert([
@@ -1185,7 +1185,7 @@
                                 يمكنك أيضًا استخدام الـ *Factories* لتوليد كميات كبيرة من البيانات الوهمية بسهولة. على
                                 سبيل المثال، يمكننا تعديل `UserSeeder` ليقوم بتوليد 10 مستخدمين باستخدام Factory
                                 كالتالي:
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function run()
                                     {
                                     \App\Models\User::factory(10)->create();
@@ -1345,7 +1345,7 @@
                                 </p>
                                 افتح ملف الهجرة الذي تم إنشاؤه، وقم بإضافة الأعمدة التي تحتاجها في جدول المستخدمين، مثل
                                 `name`، `email`، و`password`:
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function up()
                                     {
                                     Schema::create('custom_users', function (Blueprint $table) { <br>
@@ -1369,7 +1369,7 @@
                                 </p>
                                 افتح نموذج `CustomUser` وأضف إعدادات الحماية المناسبة للأعمدة التي سيتم ملؤها. على سبيل
                                 المثال:
-                                <p class="class_p_code_s">
+                                <p class="class_p_code_md">
                                     class CustomUser extends Authenticatable
                                     {
                                     protected $table = 'custom_users';
@@ -1386,7 +1386,7 @@
                                 ### 3. **إنشاء مسارات (Routes) مخصصة للمصادقة**
                                 افتح ملف `web.php` داخل مجلد `routes`، وأضف مسارات مخصصة لتسجيل الدخول وتسجيل المستخدمين
                                 وتسجيل الخروج. <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     use App\Http\Controllers\AuthController;
                                     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
                                     Route::post('/login', [AuthController::class, 'login']);
@@ -1403,14 +1403,14 @@
                                 ثم افتح `AuthController`، وأضف دوال لعرض النماذج وتسجيل المستخدمين وتسجيل الدخول
                                 والخروج. <br>
                                 #### 1. عرض نموذج التسجيل <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function showRegistrationForm()
                                     {
                                     return view('auth.register');
                                     }
                                 </p>
                                 #### 2. تسجيل المستخدم
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function register(Request $request)
                                     {
                                     $request->validate([
@@ -1431,14 +1431,14 @@
                                     }
                                 </p>
                                 #### 3. عرض نموذج تسجيل الدخول <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function showLoginForm()
                                     {
                                     return view('auth.login');
                                     }
                                 </p>
                                 #### 4. تسجيل الدخول <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function login(Request $request)
                                     {
                                     $credentials = $request->only('email', 'password'); <br>
@@ -1451,7 +1451,7 @@
                                     }
                                 </p>
                                 #### 5. تسجيل الخروج <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     public function logout()
                                     {
                                     Auth::logout();
@@ -1490,7 +1490,7 @@
                                 ### 6. **حماية المسارات باستخدام Middleware** <br>
                                 لتقييد الوصول إلى صفحات معينة على المستخدمين المسجلين فقط، يمكنك استخدام الـ Middleware
                                 `auth` على مسارات معينة:
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
                                 </p>
                                 ### **النتيجة**
@@ -1561,7 +1561,7 @@
                                 وإعادة تعيين كلمة المرور. <br>
                                 3. **تثبيت JavaScript Packages**: <br>
                                 بعد إعداد واجهات المصادقة، قم بتثبيت الحزم الأمامية (Front-end) المطلوبة باستخدام:
-                                <p class="class_p_code_s">
+                                <p class="class_p_code_md">
                                     npm install
                                     npm run dev
                                 </p>
@@ -1591,7 +1591,7 @@
                                 ### استخدام Middleware لحماية المسارات <br>
                                 يمكنك استخدام Middleware `auth` لحماية المسارات الخاصة، بحيث لا يمكن الوصول إليها إلا
                                 للمستخدمين المسجلين:
-                                <p class="class_p_code_s">
+                                <p class="class_p_code_md">
                                     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
                                 </p>
                                 ### ملاحظات إضافية <br>
@@ -1659,7 +1659,7 @@
                                 4. **تهيئة نموذج المستخدم (User Model)**: <br>
                                 افتح نموذج `User` في `App\Models\User` وقم بإضافة السمة `LaratrustUserTrait` لتمكين
                                 إدارة الأدوار والصلاحيات لهذا النموذج: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     use Laratrust\Traits\LaratrustUserTrait;
                                     class User extends Authenticatable
                                     {
@@ -1670,7 +1670,7 @@
                                 ### إنشاء الأدوار والصلاحيات <br>
                                 يمكنك إنشاء الأدوار والصلاحيات إما باستخدام الأوامر أو مباشرة في الشيفرة البرمجية. <br>
                                 #### 1. إنشاء الأدوار والصلاحيات برمجيًا <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     use App\Models\Role;
                                     use App\Models\Permission;
                                     // إنشاء دور جديد
@@ -1682,7 +1682,7 @@
                                 </p>
 
                                 #### 2. تعيين الأدوار والصلاحيات للمستخدم
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     use App\Models\User;
                                     $user = User::find(1);
                                     // تعيين دور للمستخدم
@@ -1693,19 +1693,19 @@
                                 ### استخدام الأدوار والصلاحيات في التحكم بالوصول <br>
                                 يمكنك استخدام Laratrust للتحقق من الأدوار والصلاحيات داخل الشيفرة بسهولة: <br>
                                 - **التحقق من دور المستخدم**: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     if (auth()->user()->hasRole('admin')) {
                                     // المستخدم لديه دور "admin"
                                     }
                                 </p>
                                 - **التحقق من صلاحية المستخدم**: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     if (auth()->user()->can('edit-users')) {
                                     // المستخدم لديه صلاحية "edit-users"
                                     }
                                 </p>
                                 - **التحقق من دور أو صلاحية متعددة**: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     if (auth()->user()->hasRole(['admin', 'editor'])) {
                                     // المستخدم لديه دور "admin" أو "editor"
                                     }
@@ -1716,13 +1716,13 @@
                                 ### حماية المسارات باستخدام Middleware <br>
                                 لتقييد الوصول إلى مسارات معينة بناءً على الأدوار أو الصلاحيات، يمكنك إضافة Middleware
                                 مخصص في ملف `web.php`: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     Route::group(['middleware' => ['role:admin']], function () {
                                     Route::get('/admin', [AdminController::class, 'index']);
                                     });
                                 </p>
                                 أو باستخدام الصلاحيات: <br>
-                                <p dir="ltr" class="class_p_code_s">
+                                <p dir="ltr" class="class_p_code_md">
                                     Route::group(['middleware' => ['permission:edit-users']], function () {
                                     Route::get('/users/edit', [UserController::class, 'edit']);
                                     });
@@ -1735,7 +1735,7 @@
                         </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: حزمة بريز =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/breez.png" alt="">
                         <div class="class_content">
@@ -1769,113 +1769,95 @@
                                 `Laravel Breeze` هي حزمة مصادقة خفيفة الوزن لـ Laravel، توفر واجهات بسيطة وسهلة
                                 الاستخدام مع التركيز على المكونات الأساسية للمصادقة. تُستخدم عادةً لبدء نظام مصادقة سريع
                                 وسهل في التطبيقات الجديدة، وتتضمن أساسيات مثل تسجيل الدخول، والتسجيل، وإعادة تعيين كلمة
-                                المرور، وتأكيد البريد الإلكتروني.
-
-                                ### ميزات Laravel Breeze
-
+                                المرور، وتأكيد البريد الإلكتروني. <br>
+                                ### ميزات Laravel Breeze <br>
                                 - **نظام مصادقة أساسي**: تتضمن ميزات المصادقة الأساسية مثل تسجيل الدخول، التسجيل، إعادة
-                                تعيين كلمة المرور، وتأكيد البريد الإلكتروني.
+                                تعيين كلمة المرور، وتأكيد البريد الإلكتروني. <br>
                                 - **واجهة مستخدم بسيطة**: تعتمد على Tailwind CSS، مما يجعل التصميم مريحًا وسهل التخصيص.
+                                <br>
                                 - **دعم الفئات الحديثة**: مثل استخدام Laravel Sanctum للمصادقة الخاصة بالـ APIs، مما
-                                يسهل تطوير التطبيقات الحديثة.
+                                يسهل تطوير التطبيقات الحديثة. <br>
                                 - **سهولة التخصيص**: يتيح لك Breeze تخصيص الواجهة والوظائف بسهولة، ويمكنك تحسين التصميم
-                                أو إضافة ميزات إضافية.
-
-                                ### تثبيت وإعداد Laravel Breeze
-
-                                اتبع هذه الخطوات لتثبيت وإعداد Laravel Breeze في مشروع Laravel جديد أو حالي:
-
-                                1. **تثبيت Laravel Breeze**:
-                                قم بتثبيت الحزمة باستخدام Composer:
-                                ```bash
-                                composer require laravel/breeze --dev
-                                ```
-
-                                2. **تثبيت ملفات Breeze**:
+                                أو إضافة ميزات إضافية. <br>
+                                ### تثبيت وإعداد Laravel Breeze <br>
+                                اتبع هذه الخطوات لتثبيت وإعداد Laravel Breeze في مشروع Laravel جديد أو حالي: <br>
+                                1. **تثبيت Laravel Breeze**: <br>
+                                قم بتثبيت الحزمة باستخدام Composer: <br>
+                                `<p class="run_command_small">
+                                    composer require laravel/breeze --dev
+                                </p>
+                                2. **تثبيت ملفات Breeze**: <br>
                                 بعد تثبيت الحزمة، قم بتثبيت ملفات المصادقة والأجزاء الأمامية (Frontend scaffolding)
-                                باستخدام الأمر التالي:
-                                ```bash
-                                php artisan breeze:install
-                                ```
-
-                                3. **تثبيت JavaScript Packages**:
+                                باستخدام الأمر التالي: <br>
+                                <p class="run_command_small">
+                                    php artisan breeze:install
+                                </p>
+                                3. **تثبيت JavaScript Packages**: <br>
                                 قم بتثبيت الحزم الأمامية التي يعتمد عليها التصميم باستخدام npm، وشغّل الأوامر لتجميع
-                                ملفات CSS وJavaScript:
-                                ```bash
-                                npm install
-                                npm run dev
-                                ```
-
-                                4. **تشغيل الترحيلات**:
+                                ملفات CSS وJavaScript: <br>
+                                <p class="run_command_small">
+                                    npm install
+                                    npm run dev
+                                </p>
+                                4. **تشغيل الترحيلات**: <br>
                                 Breeze يقوم بإضافة جميع الجداول التي تحتاجها المصادقة في قاعدة البيانات، لذا تأكد من
-                                إعداد قاعدة البيانات في ملف `.env`، ثم شغّل الترحيلات:
-                                ```bash
-                                php artisan migrate
-                                ```
-
-                                ### مكونات المصادقة في Breeze
-
-                                بعد تثبيت Breeze، ستجد مجموعة من مكونات المصادقة التي يتم إعدادها تلقائيًا وتشمل:
-
-                                - **تسجيل الدخول**: يمكنك الوصول إلى صفحة تسجيل الدخول عبر `/login`.
-                                - **التسجيل**: تتوفر صفحة تسجيل المستخدمين الجدد عبر `/register`.
+                                إعداد قاعدة البيانات في ملف `.env`، ثم شغّل الترحيلات: <br>
+                                <p class="run_command_small">
+                                    php artisan migrate
+                                </p>
+                                ### مكونات المصادقة في Breeze <br>
+                                بعد تثبيت Breeze، ستجد مجموعة من مكونات المصادقة التي يتم إعدادها تلقائيًا وتشمل: <br>
+                                - **تسجيل الدخول**: يمكنك الوصول إلى صفحة تسجيل الدخول عبر `/login`. <br>
+                                - **التسجيل**: تتوفر صفحة تسجيل المستخدمين الجدد عبر `/register`. <br>
                                 - **إعادة تعيين كلمة المرور**: يتيح للمستخدمين إعادة تعيين كلمة المرور عبر البريد
-                                الإلكتروني.
+                                الإلكتروني. <br>
                                 - **تأكيد البريد الإلكتروني** (اختياري): يمكن تفعيل خيار التحقق من البريد الإلكتروني
-                                للمستخدمين قبل تفعيل حساباتهم.
-
-                                ### تخصيص الواجهات
-
+                                للمستخدمين قبل تفعيل حساباتهم. <br>
+                                ### تخصيص الواجهات <br>
                                 تُنشئ Laravel Breeze قوالب Blade جاهزة في مجلد `resources/views/auth`، مما يسمح لك
-                                بتعديل وتخصيص صفحات تسجيل الدخول والتسجيل وإعادة تعيين كلمة المرور.
-
-                                ### إعداد المصادقة باستخدام APIs
-
+                                بتعديل وتخصيص صفحات تسجيل الدخول والتسجيل وإعادة تعيين كلمة المرور. <br>
+                                ### إعداد المصادقة باستخدام APIs <br>
                                 إذا كنت ترغب في إعداد مصادقة لـ API، يمكنك دمج Breeze مع **Laravel Sanctum** الذي يأتي
-                                مدمجًا ويستخدم في Breeze للمصادقة عبر الرموز (tokens).
-
-                                ### أمثلة على استخدام المصادقة في Breeze
-
-                                - **حماية المسارات باستخدام Middleware**:
+                                مدمجًا ويستخدم في Breeze للمصادقة عبر الرموز (tokens). <br>
+                                ### أمثلة على استخدام المصادقة في Breeze <br>
+                                - **حماية المسارات باستخدام Middleware**: <br>
                                 يمكنك تقييد الوصول إلى المسارات عبر Middleware `auth` للسماح فقط للمستخدمين المسجلين
-                                بالوصول إلى صفحات معينة:
+                                بالوصول إلى صفحات معينة: <br>
 
-                                ```php
-                                Route::get('/dashboard', function () {
-                                return view('dashboard');
-                                })->middleware(['auth']);
-                                ```
-
-                                - **التحقق من حالة المصادقة**:
-                                يمكنك استخدام المساعدات (helpers) للتحقق من حالة تسجيل دخول المستخدم:
-
-                                ```php
-                                if (auth()->check()) {
-                                // المستخدم مسجل الدخول
-                                }
-                                ```
-
-                                ### ملاحظات إضافية
-
+                                <p dir="ltr" class="class_p_code_md">
+                                    Route::get('/dashboard', function () {
+                                    return view('dashboard');
+                                    })->middleware(['auth']);
+                                </p>
+                                - **التحقق من حالة المصادقة**: <br>
+                                يمكنك استخدام المساعدات (helpers) للتحقق من حالة تسجيل دخول المستخدم: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    if (auth()->check()) {
+                                    // المستخدم مسجل الدخول
+                                    }
+                                </p>
+                                ### ملاحظات إضافية <br>
                                 - **تخصيص تصميم Tailwind CSS**: يعتمد Breeze على Tailwind CSS، وهو إطار عمل مرن وسهل
-                                التعديل، مما يسمح لك بتخصيص التصميم بأكمله.
+                                التعديل، مما يسمح لك بتخصيص التصميم بأكمله. <br>
                                 - **بنية خفيفة**: Breeze هو خيار مثالي للتطبيقات التي تتطلب مصادقة بسيطة، ويُعتبر نقطة
                                 انطلاق ممتازة للمشاريع التي لا تحتاج إلى ميزات معقدة مثل المصادقة الثنائية أو إدارة
-                                الفرق.
-
+                                الفرق. <br>
                                 **ملخص**: Laravel Breeze مثالي للتطبيقات الصغيرة والمتوسطة التي تتطلب إعداد نظام مصادقة
                                 بسيط وقابل للتعديل.
                             </div>
                         </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: حزمة جيت ستريم =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/jetstream.jpeg" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Jetstream </div>
-                            <h2 class="class_title_by_arabic">مكتبة:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        حزمة جيت ستريم
+                                    </span> </span>
+                                <span class="text-blue-700">Jetstream</span>
+                            </div>
                             <span class="note_purple">
                                 Jetstream . هو عبارة عن مجموعة أدوات بدء تشغيل
                                 التطبيقات مصممة بشكل جميل توفر نقطة انطلاق مثالية لتطبيقات Laravel القادمة.
@@ -1888,15 +1870,102 @@
                             <div class="run_command_small">npm run build</div>
                             <div class="run_command_small">php artisan migrate</div>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                `Laravel Jetstream` هي حزمة متقدمة للمصادقة في Laravel، توفر نظام مصادقة قوي مع ميزات
+                                إضافية مثل إدارة الملفات الشخصية، المصادقة الثنائية (2FA)، الفرق، وتأكيد الجلسات. تعتمد
+                                Jetstream على **Livewire** و**Inertia.js** لتقديم واجهات تفاعلية للمستخدم، مما يجعلها
+                                مثالية للتطبيقات الحديثة التي تتطلب واجهات تفاعلية وتجربة مستخدم سلسة. <br>
+                                ### ميزات Laravel Jetstream <br>
+                                - **مصادقة شاملة**: يشمل تسجيل الدخول، والتسجيل، وإعادة تعيين كلمة المرور، وتأكيد البريد
+                                الإلكتروني. <br>
+                                - **إدارة الملفات الشخصية**: يسمح للمستخدمين بتحديث معلوماتهم الشخصية وإعدادات الحساب.
+                                - **المصادقة الثنائية (2FA)**: توفر حماية إضافية للحسابات باستخدام المصادقة الثنائية عبر
+                                تطبيقات Authenticator. <br>
+                                - **إدارة الجلسات**: يمكن للمستخدمين إدارة الجلسات النشطة وتسجيل الخروج من الأجهزة
+                                الأخرى. <br>
+                                - **الفرق**: يتيح إنشاء فرق للعمل ومشاركة الموارد، مناسب للتطبيقات التي تتطلب تعاون
+                                المستخدمين. <br>
+                                - **دعم Livewire وInertia.js**: يمكن استخدام Livewire لواجهة مستخدم تفاعلية في Blade، أو
+                                Inertia.js للتفاعل مع Vue.js. <br>
+                                ### كيفية تثبيت وإعداد Laravel Jetstream <br>
+                                إليك الخطوات الأساسية لتثبيت Jetstream في مشروع Laravel: <br>
+                                1. **تثبيت Jetstream**: <br>
+                                قم بتثبيت الحزمة عبر Composer: <br>
+                                <p class="run_command_small">
+                                    composer require laravel/jetstream
+                                </p>
+                                2. **اختيار التثبيت مع Livewire أو Inertia.js**: <br>
+                                بعد تثبيت الحزمة، يمكنك الاختيار بين Livewire أو Inertia.js حسب تفضيلاتك في الواجهات:
+                                <br>
+                                - **تثبيت Jetstream مع Livewire**:
+                                <p class="run_command_small">
+                                    php artisan jetstream:install livewire
+                                </p>
+                                - **تثبيت Jetstream مع Inertia.js**: <br>
+                                <p class="run_command_small">
+                                    php artisan jetstream:install inertia
+                                </p>
+                                يمكنك أيضًا إضافة خيار `--teams` لتفعيل ميزة الفرق (Teams) إذا كانت مطلوبة: <br>
+                                <p class="run_command_small">
+                                    php artisan jetstream:install livewire --teams
+                                </p>
+                                3. **تثبيت JavaScript Packages**: <br>
+                                بعد تثبيت Jetstream، قم بتثبيت الحزم الأمامية اللازمة: <br>
+                                <p class="run_command_small">
+                                    npm install
+                                    npm run dev
+                                </p>
+                                4. **تشغيل الترحيلات**: <br>
+                                تفعيل الترحيلات لإنشاء الجداول المطلوبة للمصادقة والفرق والمصادقة الثنائية: <br>
+                                <p class="run_command_small">
+                                    php artisan migrate
+                                </p>
+                                ### المكونات الأساسية في Jetstream <br>
+                                توفر Jetstream عدة صفحات وإعدادات جاهزة للمصادقة وإدارة الحسابات: <br>
+                                - **صفحة تسجيل الدخول والتسجيل**: توفر واجهات مخصصة للمصادقة. <br>
+                                - **إعدادات الملف الشخصي**: صفحة لتحديث بيانات المستخدم وكلمة المرور. <br>
+                                - **المصادقة الثنائية (2FA)**: يمكن تفعيلها من الإعدادات لتوفير حماية إضافية. <br>
+                                - **إدارة الجلسات**: إدارة الجلسات النشطة وتسجيل الخروج من الأجهزة. <br>
+                                - **إدارة الفرق (إذا تم تفعيل الفرق)**: يمكن للمستخدمين إنشاء وإدارة الفرق وإضافة أعضاء
+                                وإدارة الصلاحيات. <br>
+                                ### تخصيص Jetstream <br>
+                                تعتبر Jetstream مرنة، وتوفر تخصيصًا واسعًا من خلال: <br>
+                                - **تعديل الواجهات**: القوالب متاحة في `resources/views`، ويمكن تعديلها وتخصيصها. <br>
+                                - **تخصيص إدارة الفرق**: يمكن تعديل إعدادات الفرق من خلال ملفات التكوين. <br>
+                                - **إضافة ميزات خاصة بالمشروع**: Jetstream يمكن أن يُدمج مع ميزات إضافية بسهولة. <br>
+                                ### مثال على حماية المسارات باستخدام Middleware <br>
+                                يمكنك حماية المسارات باستخدام `auth` أو `verified` للمستخدمين الذين قاموا بتأكيد بريدهم
+                                الإلكتروني: <br>
+
+                                <p dir="ltr" class="class_p_code_md">
+                                    Route::get('/dashboard', function () {
+                                    return view('dashboard');
+                                    })->middleware(['auth', 'verified']);
+                                </p>
+                                ### ملاحظات إضافية <br>
+                                - **تكامل مع Sanctum**: Jetstream يأتي مدمجًا مع Sanctum لتأمين API. <br>
+                                - **تحكم كامل بالمصادقة والجلسات**: يوفر إعدادات متقدمة للمصادقة الثنائية وإدارة الجلسات
+                                بشكل مثالي. <br>
+                                ### متى تستخدم Jetstream؟ <br>
+                                `Laravel Jetstream` هو الخيار الأنسب للتطبيقات المتوسطة والكبيرة التي تحتاج إلى إدارة
+                                متقدمة للحسابات والمصادقة، سواء كنت ترغب في واجهة بسيطة أو واجهة تفاعلية باستخدام
+                                Livewire أو Vue.js عبر Inertia.js.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: التحقق =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/validation.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                validation </div>
-                            <h2 class="class_title_by_arabic">التحقق:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        التحقق
+                                    </span> </span>
+                                <span class="text-blue-700">validation</span>
+                            </div>
                             <span class="run_command">
                                 <span class="text-amber-700">php</span> artisan make:request name_request
                             </span>
@@ -1925,16 +1994,6 @@
                                 ملاحظة للاحتفاظ بالبيانات في حقل الإدخال :-<br>
                                 value="{{ old('name') }}"
                             </p>
-                        </div>
-                    </div>
-
-                    <!-- =============== Card :: =============== -->
-                    <div dir="rtl" class="class_div_img">
-                        <img class="class_img" src="assets/images/validate.png" alt="">
-                        <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                validation in controller </div>
-                            <h2 class="class_title_by_arabic">التحقق:</h2>
                             <span class="note_purple">
                                 التحقق في كلاس التحكم داخل دالة الإدخال أو التحديث وذلك عبر الكود التالي::- <br>
                             </span>
@@ -1949,15 +2008,146 @@
                                 return redirect()->to('login’); }
                             </p>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                في Laravel، يتم استخدام التحقق من صحة البيانات **(Validation)** للتأكد من صحة البيانات
+                                المدخلة من قبل المستخدم قبل تخزينها في قاعدة البيانات. يوفر Laravel مجموعة من قواعد
+                                التحقق الجاهزة التي يمكن استخدامها بسهولة، كما يتيح لك إنشاء قواعد تحقق مخصصة. <br>
+                                ### طرق استخدام Validation في Laravel <br>
+                                يوفر Laravel عدة طرق للتحقق من صحة البيانات، منها: <br>
+                                1. **استخدام `validate` في المتحكمات (Controllers)**. <br>
+                                2. **استخدام كائنات الطلب المخصصة (Form Request Classes)**. <br>
+                                ### 1. التحقق من صحة البيانات باستخدام `validate` في المتحكمات <br>
+                                أسهل طريقة للتحقق من صحة البيانات هي استخدام دالة `validate` مباشرة داخل المتحكم: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    public function store(Request $request)
+                                    {
+                                    $validatedData = $request->validate([
+                                    'name' => 'required|max:255',
+                                    'email' => 'required|email|unique:users',
+                                    'password' => 'required|min:8|confirmed',
+                                    ]);
+
+                                    // إذا كانت البيانات صحيحة، يمكن تخزينها
+                                    User::create($validatedData);
+                                    return redirect()->back()->with('success', 'User created successfully');
+                                    }
+                                </p>
+                                في هذا المثال: <br>
+                                - `required`: الحقل يجب أن يكون موجودًا وألا يكون فارغًا. <br>
+                                - `max:255`: يجب ألا يتجاوز الحقل 255 حرفًا. <br>
+                                - `email`: يجب أن يكون الحقل بصيغة بريد إلكتروني صحيحة. <br>
+                                - `unique:users`: يجب ألا يكون البريد الإلكتروني مكررًا في جدول المستخدمين. <br>
+                                - `min:8`: يجب أن يكون الحقل بطول 8 أحرف على الأقل. <br>
+                                - `confirmed`: يجب أن يحتوي الحقل `password_confirmation` على نفس القيمة. <br>
+                                ### 2. التحقق من صحة البيانات باستخدام كائنات الطلب المخصصة (Form Request Classes) <br>
+                                إذا كنت تريد استخدام التحقق في عدة أماكن أو ترغب في تنظيم الكود بشكل أفضل، يمكنك استخدام
+                                كائنات الطلب المخصصة. <br>
+                                #### إنشاء كائن طلب مخصص <br>
+                                يمكنك إنشاء كائن طلب باستخدام الأمر التالي: <br>
+                                <p class="run_command_small">
+                                    php artisan make:request StoreUserRequest
+                                </p>
+                                سيتم إنشاء كائن الطلب في `app/Http/Requests/StoreUserRequest.php`. يمكنك إضافة قواعد
+                                التحقق بداخله كالتالي: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    namespace App\Http\Requests;
+                                    use Illuminate\Foundation\Http\FormRequest;
+                                    class StoreUserRequest extends FormRequest
+                                    {
+                                    public function authorize()
+                                    {
+                                    return true; // تأكد من أن المستخدم لديه الصلاحية لتنفيذ الطلب
+                                    } <br>
+                                    public function rules()
+                                    {
+                                    return [
+                                    'name' => 'required|max:255',
+                                    'email' => 'required|email|unique:users',
+                                    'password' => 'required|min:8|confirmed',
+                                    ];
+                                    }
+                                    }
+                                </p>
+                                #### استخدام كائن الطلب المخصص في المتحكم <br>
+                                بمجرد إنشاء كائن الطلب، يمكنك تمريره إلى المتحكم بدلاً من كائن `Request` العادي:
+                                <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    public function store(StoreUserRequest $request)
+                                    {
+                                    User::create($request->validated());
+                                    return redirect()->back()->with('success', 'User created successfully');
+                                    }
+                                </p>
+                                ### رسائل الخطأ المخصصة <br>
+                                يمكنك تخصيص رسائل الخطأ من خلال `messages` في كائن الطلب أو بتمرير مصفوفة الرسائل داخل
+                                دالة `validate`: <br>
+                                #### في كائن الطلب <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    public function messages()
+                                    {
+                                    return [
+                                    'name.required' => 'الاسم مطلوب.',
+                                    'email.required' => 'البريد الإلكتروني مطلوب.',
+                                    'email.email' => 'يجب أن يكون البريد الإلكتروني بصيغة صحيحة.',
+                                    'password.min' => 'يجب أن تكون كلمة المرور على الأقل 8 أحرف.',
+                                    ];
+                                    }
+                                </p>
+                                #### تمرير الرسائل مباشرة في دالة `validate`
+                                <p dir="ltr" class="class_p_code_md">
+                                    $validatedData = $request->validate([
+                                    'name' => 'required|max:255',
+                                    'email' => 'required|email|unique:users',
+                                    'password' => 'required|min:8|confirmed',
+                                    ], [
+                                    'name.required' => 'الاسم مطلوب.',
+                                    'email.required' => 'البريد الإلكتروني مطلوب.',
+                                    ]);
+                                </p>
+                                ### قواعد التحقق الشائعة في Laravel <br>
+                                - `required` : يجب أن يكون الحقل موجودًا وألا يكون فارغًا. <br>
+                                - `nullable`: الحقل اختياري، ولكن إذا كان موجودًا يجب أن يحقق القواعد الأخرى. <br>
+                                - `email`: يجب أن يكون الحقل بصيغة بريد إلكتروني صحيحة. <br>
+                                - `unique:table,column`: يجب أن يكون الحقل فريدًا في الجدول المحدد. <br>
+                                - `max:value`: يجب ألا يزيد طول الحقل عن القيمة المحددة. <br>
+                                - `min:value`: يجب ألا يقل طول الحقل عن القيمة المحددة. <br>
+                                - `confirmed`: يجب أن يكون هناك حقل آخر بنفس الاسم مع اللاحقة `_confirmation` ويحتوي
+                                على
+                                نفس القيمة. <br>
+                                - `date`: يجب أن يكون الحقل تاريخًا. <br>
+                                - `after:date`: يجب أن يكون الحقل تاريخًا بعد التاريخ المحدد. <br>
+                                - `exists:table,column`: يجب أن تكون القيمة موجودة في الجدول المحدد. <br>
+                                ### التحقق المخصص <br>
+                                يمكنك إنشاء قواعد تحقق مخصصة بإنشاء كائنات تحقق مخصصة أو بتمرير دوال تحقق كالتالي: <br>
+                                #### تمرير دوال تحقق مباشرة <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    $validatedData = $request->validate([
+                                    'username' => [
+                                    'required',
+                                    function ($attribute, $value, $fail) {
+                                    if ($value === 'admin') {
+                                    $fail('اسم المستخدم لا يمكن أن يكون "admin".');
+                                    }
+                                    },
+                                    ],
+                                    ]);
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: Vite =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/Vite.js.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                vite </div>
-                            <h2 class="class_title_by_arabic">فيت:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        فيت
+                                    </span> </span>
+                                <span class="text-blue-700">vite</span>
+                            </div>
                             <span class="note_indigo">
                                 لارافيل-فيت هو تكامل بين إطار عمل لارافيل وأداة البناء الحديثة فيت (Vite)، مما يوفر
                                 بيئة
@@ -1976,15 +2166,115 @@
                                 and you can use class in view:-
                             </p>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                نظام **Vite** في Laravel هو أداة لبناء وإدارة الأصول الأمامية، مثل JavaScript وCSS،
+                                ويوفر تحسينات ملحوظة في الأداء وسرعة التطوير. يعمل **Vite** بشكل أساسي على تجميع وتشغيل
+                                الأصول الأمامية بسرعة، كما أنه يدعم إعادة التحميل التلقائي، مما يجعله مناسبًا للتطوير
+                                الحديث باستخدام إطار Laravel. <br>
+                                تم اعتماد Vite في Laravel بداية من الإصدار 9 كبديل لـ **Laravel Mix**، لأنه يقدم أداءً
+                                أسرع وتجربة تطوير أفضل، خاصةً مع المشاريع الكبيرة. <br>
+                                ### ميزات Vite في Laravel <br>
+                                1. **سرعة عالية**: يعتمد على التجميع السريع، خاصة عند استخدام **ES Modules** التي تدعمها
+                                المتصفحات الحديثة. <br>
+                                2. **إعادة التحميل السريع**: يدعم HMR (Hot Module Replacement)، الذي يسمح بتحديثات فورية
+                                عند تعديل الملفات، دون الحاجة إلى إعادة تحميل الصفحة. <br>
+                                3. **سهولة التكوين**: يمكنك تخصيص إعدادات Vite بسهولة لتناسب احتياجاتك. <br>
+                                4. **دعم لـ Vue و React**: يدعم تكاملاً سلسًا مع إطارات العمل الأمامية مثل Vue وReact
+                                مباشرةً. <br>
+                                5. **بناء سريع للإنتاج**: يوفر خيارات لتجميع الأكواد وتحسينها، مما يؤدي إلى كود نهائي
+                                صغير وسريع. <br>
+                                ### كيفية إعداد Vite في Laravel <br>
+                                #### 1. تثبيت Laravel <br>
+                                تأكد من أنك تعمل على مشروع Laravel 9 أو أحدث، حيث يأتي Laravel 9 وما بعده مدمجًا مع Vite
+                                بشكل افتراضي. <br>
+                                #### 2. إعداد بيئة Vite <br>
+                                بشكل افتراضي، عند إنشاء مشروع جديد في Laravel 9 أو أعلى، سيتم إعداد Vite تلقائيًا، وستجد
+                                ملف `vite.config.js` في جذر المشروع. <br>
+                                #### 3. تثبيت الحزم اللازمة <br>
+                                تأكد من تثبيت الحزم المطلوبة عبر تشغيل الأوامر التالية: <br>
+                                <p class="run_command_small">
+                                    npm install
+                                </p>
+                                #### 4. تشغيل Vite <br>
+                                يمكنك تشغيل Vite بوضع التطوير من خلال الأمر: <br>
+                                <p class="run_command_small">
+                                    npm run dev
+                                </p>
+                                سيقوم هذا الأمر بتشغيل خادم التطوير لـ Vite، ويفتح لك ميزة **HMR** التي تتيح تحديث
+                                التعديلات بشكل فوري. <br>
+                                #### 5. إعدادات `vite.config.js` <br>
+                                في ملف `vite.config.js` يمكنك تخصيص إعدادات Vite حسب احتياجاتك. على سبيل المثال، يمكنك
+                                إعداد تكامل مع Vue أو React، وتحديد كيفية إدارة الأصول. <br>
+                                #### مثال لإعداد Vite مع Vue <br>
+                                لتشغيل Vite مع Vue، ستحتاج أولاً إلى تثبيت `@vitejs/plugin-vue`: <br>
+                                <p class="run_command_small">
+                                    npm install @vitejs/plugin-vue
+                                </p>
+                                ثم أضف هذا الإعداد إلى `vite.config.js`:
+                                <p dir="ltr" class="class_p_code_md">
+                                    // javascript
+                                    import { defineConfig } from 'vite';
+                                    import vue from '@vitejs/plugin-vue';
+                                    import laravel from 'laravel-vite-plugin';
+
+                                    export default defineConfig({
+                                    plugins: [
+                                    laravel({
+                                    input: ['resources/css/app.css', 'resources/js/app.js'],
+                                    refresh: true,
+                                    }),
+                                    vue(),
+                                    ],
+                                    });
+                                </p>
+                                ### استخدام الأصول مع Vite في Laravel <br>
+                                عند استخدام Vite، سيتم استدعاء الأصول في ملفات Blade بشكل مختلف عن الطريقة التقليدية في
+                                Laravel Mix. على سبيل المثال: <br>
+                                في الملف `app.blade.php`، استبدل روابط الأصول كما يلي: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    ```blade
+                                    <!DOCTYPE html>
+                                    <html lang="en">
+
+                                    <head>
+                                        @vite(['resources/css/app.css', 'resources/js/app.js'])
+                                    </head>
+
+                                    <body>
+                                        <div id="app"></div>
+                                    </body>
+
+                                    </html>
+                                </p>
+                                ### تجهيز الأصول للإنتاج <br>
+                                عند الانتهاء من التطوير وترغب في تجهيز الأصول للنشر في بيئة الإنتاج، يمكنك تشغيل:
+                                <p class="run_command_small">
+                                    npm run build
+                                </p>
+                                سيقوم هذا الأمر بتجميع الأصول وضغطها لتقليل حجم الملفات وتحسين الأداء في بيئة الإنتاج.
+                                <br>
+                                ### مزايا Vite مقارنة بـ Laravel Mix <br>
+                                - **أداء أعلى**: بسبب استخدام Vite لأحدث تقنيات التجميع، فإن وقت بدء التشغيل وسرعة إعادة
+                                التحميل أسرع بكثير من Mix. <br>
+                                - **دعم التحديث الفوري (HMR)**: يسمح Vite بتحديث أجزاء محددة من الصفحة عند التعديل، مما
+                                يجعل تجربة التطوير أسرع. <br>
+                                - **تكامل مرن**: يمكنك بسهولة دمج Vite مع إطارات عمل JavaScript الشهيرة، كـ Vue وReact.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: Laravel-mix =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/Laravel-mix.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Laravel-mix </div>
-                            <h2 class="class_title_by_arabic">ميكس:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        لارافيل ميكس
+                                    </span> </span>
+                                <span class="text-blue-700">Laravel-mix</span>
+                            </div>
                             <span class="note_purple">
                                 لارافيل ميكس هو حزمة تم تطويرها بواسطة جيفري واي من لاراكاست، وهي توفر واجهة برمجة
                                 تطبيقات سلسة
@@ -2009,16 +2299,119 @@
                                 script src="{{ mix('resources/js/app.js') }}"> /script>
                             </p>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                `Laravel Mix` هو أداة لتجميع وإدارة الأصول الأمامية في Laravel، مبنية على **Webpack**،
+                                وتتيح للمطورين كتابة الأكواد الأمامية (CSS، JavaScript، Sass، Less) وتجميعها بشكل سلس
+                                للاستخدام في مشاريعهم. Laravel Mix يُستخدم لتسهيل التعامل مع الأصول، وضغطها، وتحديثها
+                                بشكل آلي، مما يجعل إدارة الأصول فعالة وسهلة. <br>
+                                ### ميزات Laravel Mix <br>
+                                1. **سهولة الاستخدام**: يوفر Mix واجهة بسيطة باستخدام JavaScript، مما يجعله سهل
+                                الاستخدام حتى للمبتدئين. <br>
+                                2. **تجميع CSS و JavaScript**: يمكنك بسهولة تجميع ودمج الملفات المتعددة في ملف واحد، مما
+                                يحسن أداء الموقع. <br>
+                                3. **دعم Sass و Less**: يتيح لك استخدام Sass وLess للحصول على ملفات CSS أكثر تنظيماً
+                                وقابلة للصيانة. <br>
+                                4. **ضغط الملفات وتحسينها**: يقوم بضغط الأصول تلقائيًا عند تشغيل بيئة الإنتاج، مما يقلل
+                                حجم الملفات ويحسن من سرعة التحميل. <br>
+                                5. **إعادة التحميل التلقائي**: يدعم إعادة التحميل الفوري عند التعديل في الملفات. <br>
+                                ### إعداد Laravel Mix في مشروع Laravel <br>
+                                عند تثبيت Laravel، يكون `Laravel Mix` مدمجًا بشكل افتراضي. ستجد ملف `webpack.mix.js` في
+                                جذر المشروع، وهو الملف الأساسي لتكوين Mix. <br>
+                                #### 1. تثبيت الحزم اللازمة <br>
+                                تأكد من تثبيت حزم NPM المطلوبة عن طريق تشغيل: <br>
+                                <p class="run_command_small">
+                                    npm install
+                                </p>
+                                #### 2. إعداد وتجميع الأصول <br>
+                                في ملف `webpack.mix.js`، يمكنك تحديد الأصول التي تريد تجميعها. هنا مثال بسيط لتجميع
+                                ملفات JavaScript وCSS: <br>
+
+                                <p dir="ltr" class="class_p_code_md">
+                                    ```javascript
+                                    const mix = require('laravel-mix');
+
+                                    mix.js('resources/js/app.js', 'public/js')
+                                    .sass('resources/sass/app.scss', 'public/css');
+                                </p>
+                                في هذا المثال: <br>
+                                - يقوم Mix بتجميع `app.js` من `resources/js` ووضعه في `public/js`. <br>
+                                - يجمع Mix `app.scss` ويحولها إلى CSS ويضعها في `public/css`. <br>
+                                #### 3. تشغيل Laravel Mix <br>
+                                يمكنك تجميع الأصول عن طريق تشغيل الأوامر التالية: <br>
+                                - **وضع التطوير** (Development Mode): لتحميل الأصول دون ضغطها، مما يسهل عملية التصحيح.
+                                <br>
+                                <p class="run_command_small">
+                                    npm run dev
+                                </p>
+                                - **وضع الإنتاج** (Production Mode): لتجميع وضغط الملفات لتحسين الأداء في بيئة الإنتاج.
+                                <br>
+                                <p class="run_command_small">
+                                    npm run production
+                                </p>
+                                #### 4. مراقبة الملفات (Watch) <br>
+                                إذا كنت تريد تشغيل Mix ومراقبة الملفات باستمرار للتحديث عند أي تعديل، يمكنك استخدام:
+                                <p class="run_command_small">
+                                    npm run watch
+                                </p>
+                                ### دعم ميزات إضافية في Laravel Mix <br>
+                                - **إضافة نسخة من الملفات**: يمكنك نسخ الملفات أو المجلدات إلى `public` باستخدام `copy`:
+                                <br>
+
+                                <p dir="ltr" class="class_p_code_md">
+                                    ```javascript
+                                    mix.copy('resources/images', 'public/images');
+                                </p>
+                                - **إضافة إعدادات Babel**: لتوافق JavaScript مع المتصفحات القديمة، يمكنك إضافة إعدادات
+                                <br>
+                                Babel:
+                                <p dir="ltr" class="class_p_code_md">
+                                    ```javascript
+                                    mix.babel('resources/js/app.js', 'public/js/app.compiled.js');
+                                </p>
+                                - **استخدام الإضافات (Plugins)**: يمكنك إضافة إضافات Webpack بسهولة عبر Mix. <br>
+                                ### مثال كامل على إعداد `webpack.mix.js` <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    ```javascript
+                                    const mix = require('laravel-mix');
+
+                                    mix.js('resources/js/app.js', 'public/js')
+                                    .sass('resources/sass/app.scss', 'public/css')
+                                    .copy('resources/images', 'public/images')
+                                    .version();
+                                </p>
+                                ### استدعاء الأصول في Laravel <br>
+                                في ملفات Blade، يمكنك استدعاء الأصول باستخدام المساعد `mix` كالتالي: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    ```blade
+                                    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+                                    <script src="{{ mix('js/app.js') }}"></script>
+                                </p>
+
+                                ### Laravel Mix vs. Vite <br>
+                                - **سهولة الاستخدام**: Mix أسهل ويعتمد على Webpack، بينما Vite يعتمد على ES Modules
+                                ويوفر سرعة أكبر في إعادة التحميل. <br>
+                                - **التحديث الفوري**: Vite أسرع عند إجراء التعديلات بفضل HMR، بينما Mix قد يكون أبطأ
+                                قليلاً في المشاريع الكبيرة. <br>
+                                - **الأداء**: Mix جيد، لكن Vite أفضل عند إدارة أصول كبيرة ومعقدة بفضل اعتماده على ESM.
+                                <br>
+                                `Laravel Mix` هو خيار ممتاز وسهل الاستخدام لتجميع الأصول في Laravel، خاصةً للمشاريع التي
+                                تتطلب إعدادات بسيطة أو للمطورين الذين يفضلون Webpack.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: Notifications to Email =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/notifications.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Notification </div>
-                            <h2 class="class_title_by_arabic">Basics and The Mail Channel: إرسال إلى
-                                الإيميل</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        الإشعارات
+                                    </span> </span>
+                                <span class="text-blue-700">Notifications To Email</span>
+                            </div>
                             <span class="note_purple">
                                 إنشاء كلاس Notification: </span>
                             <div class="run_command">
@@ -2088,13 +2481,129 @@
                                 use Notifiable;
                             </span>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                في Laravel، يمكنك بسهولة إرسال إشعارات إلى البريد الإلكتروني باستخدام **نظام الإشعارات**
+                                المدمج. يوفر Laravel واجهة قوية لإرسال إشعارات إلى مختلف القنوات، بما في ذلك البريد
+                                الإلكتروني، وقاعدة البيانات، وSMS، وغيرها. يمكنك إعداد إشعارات البريد الإلكتروني
+                                باستخدام قوالب مخصصة، مما يجعل تجربة الإشعارات قابلة للتخصيص وسهلة الاستخدام. <br>
+                                ### خطوات إعداد الإشعارات إلى البريد الإلكتروني <br>
+                                #### 1. إعداد خادم البريد الإلكتروني <br>
+                                قبل البدء، تأكد من إعداد خادم البريد الإلكتروني في تطبيق Laravel. يمكنك تعديل إعدادات
+                                البريد الإلكتروني في ملف `.env` كالتالي: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    // env
+                                    MAIL_MAILER=smtp
+                                    MAIL_HOST=smtp.your-email-provider.com
+                                    MAIL_PORT=587
+                                    MAIL_USERNAME=your-email@example.com
+                                    MAIL_PASSWORD=your-password
+                                    MAIL_ENCRYPTION=tls
+                                    MAIL_FROM_ADDRESS=your-email@example.com
+                                    MAIL_FROM_NAME="${APP_NAME}"
+                                </p>
+                                تأكد من تغيير هذه القيم إلى بياناتك الخاصة بالبريد الإلكتروني. <br>
+                                #### 2. إنشاء إشعار جديد <br>
+                                يمكنك إنشاء إشعار جديد باستخدام أمر Artisan التالي:
+                                <p class=" run_command_small">
+                                    php artisan make:notification UserNotification
+                                </p>
+                                سيقوم هذا الأمر بإنشاء إشعار جديد في `app/Notifications/UserNotification.php`. <br>
+                                #### 3. تكوين الإشعار للبريد الإلكتروني <br>
+                                في كلاس الإشعار الذي تم إنشاؤه، يمكنك تحديد كيفية إرسال الإشعار عبر البريد الإلكتروني
+                                باستخدام دالة `toMail`. <br>
+                                إليك مثال على إعداد `UserNotification`: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    namespace App\Notifications;
+                                    use Illuminate\Bus\Queueable;
+                                    use Illuminate\Notifications\Notification;
+                                    use Illuminate\Notifications\Messages\MailMessage;
+                                    class UserNotification extends Notification
+                                    {
+                                    use Queueable; <br>
+                                    public function __construct()
+                                    {
+                                    //
+                                    } <br>
+                                    public function via($notifiable)
+                                    {
+                                    return ['mail'];
+                                    } <br>
+                                    public function toMail($notifiable)
+                                    {
+                                    return (new MailMessage)
+                                    ->subject('Notification Subject')
+                                    ->greeting('Hello!')
+                                    ->line('This is a notification message.')
+                                    ->action('View Details', url('/'))
+                                    ->line('Thank you for using our application!');
+                                    }
+                                    }
+                                </p>
+                                في هذا المثال: <br>
+                                - `subject` لتحديد عنوان البريد. <br>
+                                - `greeting` لتحية المستخدم. <br>
+                                - `line` لإضافة نصوص للإشعار. <br>
+                                - `action` لإضافة رابط في الإشعار، حيث يأخذ `url` والرابط كمعاملات. <br>
+                                - يمكنك إضافة عدة أسطر باستخدام `line`. <br>
+                                #### 4. إرسال الإشعار <br>
+                                يمكنك إرسال الإشعار إلى المستخدم باستخدام طريقة `notify` في كائن المستخدم: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    use App\Notifications\UserNotification;
+                                    use App\Models\User;
+
+                                    $user = User::find(1); // مثال على العثور على المستخدم
+                                    $user->notify(new UserNotification());
+                                </p>
+                                #### 5. تخصيص قالب البريد الإلكتروني <br>
+                                إذا كنت ترغب في تخصيص القالب بالكامل، يمكنك إنشاء قالب مخصص للإشعارات. يمكنك تشغيل الأمر
+                                التالي لإنشاء ملف HTML مخصص: <br>
+                                <p class=" run_command_small">
+                                    php artisan vendor:publish --tag=laravel-notifications
+                                </p>
+                                سيتم نشر القوالب المخصصة في `resources/views/vendor/notifications/email.blade.php`،
+                                ويمكنك تعديل هذا القالب حسب الحاجة. <br>
+                                ### استخدام نظام الطوابير (Queues) <br>
+                                إذا كنت تريد تحسين الأداء عند إرسال الإشعارات عبر البريد الإلكتروني، يمكنك تشغيل الإشعار
+                                داخل الطوابير (Queues). ببساطة أضف واجهة `ShouldQueue` في كلاس الإشعار: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    use Illuminate\Contracts\Queue\ShouldQueue;
+                                    class UserNotification extends Notification implements ShouldQueue
+                                    {
+                                    use Queueable;
+
+                                    // بقية كود الإشعار
+                                    }
+                                </p>
+                                ثم تأكد من إعداد الطوابير وتشغيلها لتحسين عملية إرسال البريد الإلكتروني. <br>
+                                ### ملاحظات إضافية <br>
+                                - يمكنك إرسال الإشعارات لأكثر من قناة بتعديل دالة `via`، مثلاً:
+
+                                <p dir="ltr" class="class_p_code_md">
+                                    public function via($notifiable)
+                                    {
+                                    return ['mail', 'database'];
+                                    }
+                                </p>
+                                - تأكد من ضبط إعدادات البريد في `.env` وإعداد طوابير **Redis** أو **Database** إذا كان
+                                التطبيق يحتاج إلى معالجة سريعة لإشعارات متعددة. <br>
+                                بهذا، يمكنك إرسال إشعارات بريد إلكتروني بسهولة ومرونة في Laravel، مع إمكانية تخصيص
+                                الرسائل وتجهيزها للعرض بالشكل الأمثل.
+                            </div>
+                        </div>
                     </div>
 
-
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: Notifications to database =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/notifications_1.png" alt="">
                         <div class="class_content">
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        الإشعارات إلى قاعدة البيانات
+                                    </span> </span>
+                                <span class="text-blue-700">Notifications To Datebase</span>
+                            </div>
                             <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
                                 Notification </div>
                             <h2 class="class_title_by_arabic">Database Channel: إرسال إلى </h2>
@@ -2138,7 +2647,115 @@
                                 ->line("Thank you for using our application!");
                                 }
                             </p>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                لإرسال **الإشعارات إلى قاعدة البيانات** في Laravel، يمكنك استخدام **نظام الإشعارات
+                                المدمج** لتخزين الإشعارات في جدول مخصص. سيسمح لك ذلك بعرض الإشعارات داخل التطبيق أو لوحة
+                                التحكم بحيث يتمكن المستخدمون من الوصول إليها في أي وقت. <br>
+                                ### خطوات إعداد إشعارات قاعدة البيانات في Laravel <br>
+                                #### 1. إنشاء جدول الإشعارات في قاعدة البيانات <br>
+                                Laravel يوفر جدولًا جاهزًا للإشعارات، ويمكنك إنشاؤه باستخدام الأمر التالي:
+                                <p class="run_command_small">
+                                    php artisan notifications:table
+                                    php artisan migrate
+                                </p>
+                                سينشئ هذا الأمر جدول `notifications` في قاعدة البيانات لتخزين جميع الإشعارات. <br>
+                                #### 2. إنشاء إشعار جديد <br>
+                                أنشئ إشعارًا جديدًا باستخدام الأمر: <br>
+                                <p class="run_command_small">
+                                    php artisan make:notification DatabaseNotification
+                                </p>
+                                سيتم إنشاء ملف الإشعار في `app/Notifications/DatabaseNotification.php`. <br>
+                                #### 3. إعداد الإشعار لقناة قاعدة البيانات <br>
+                                في كلاس الإشعار، يمكنك تحديد `database` كقناة الإرسال باستخدام `via` وتحديد البيانات
+                                التي ترغب في تخزينها في جدول الإشعارات داخل `toDatabase`: <br>
 
+                                <p dir="ltr" class="class_p_code_md">
+                                    namespace App\Notifications;
+
+                                    use Illuminate\Bus\Queueable;
+                                    use Illuminate\Notifications\Notification;
+
+                                    class DatabaseNotification extends Notification
+                                    {
+                                    use Queueable; <br>
+                                    public function __construct()
+                                    {
+                                    //
+                                    } <br>
+                                    public function via($notifiable)
+                                    {
+                                    return ['database'];
+                                    } <br>
+                                    public function toDatabase($notifiable)
+                                    {
+                                    return [
+                                    'title' => 'New Notification',
+                                    'message' => 'You have a new notification.',
+                                    'url' => url('/notifications'),
+                                    'user_id' => $notifiable->id,
+                                    ];
+                                    }
+                                    }
+                                </p>
+                                في `toDatabase`: <br>
+                                - يمكنك تحديد البيانات التي سيتم تخزينها، مثل العنوان (`title`)، والرسالة (`message`)،
+                                ورابط (`url`) حيث يمكن للمستخدم رؤية التفاصيل، أو أي بيانات أخرى تحتاجها. <br>
+                                #### 4. إرسال الإشعار <br>
+                                لإرسال الإشعار إلى قاعدة البيانات، يمكنك استدعاء دالة `notify` مع كائن الإشعار على كائن
+                                المستخدم: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    use App\Notifications\DatabaseNotification;
+                                    use App\Models\User;
+
+                                    $user = User::find(1);
+                                    $user->notify(new DatabaseNotification());
+                                </p>
+                                #### 5. عرض الإشعارات من قاعدة البيانات <br>
+                                يمكنك الحصول على إشعارات المستخدم وعرضها مباشرةً في أي جزء من التطبيق. على سبيل المثال،
+                                يمكنك جلب الإشعارات وعرضها في لوحة التحكم: <br>
+                                <p dir="ltr" class="class_p_code_md">
+                                    $user = auth()->user();
+                                    $notifications = $user->notifications; // جلب كل الإشعارات
+                                    $unreadNotifications = $user->unreadNotifications; // جلب الإشعارات غير المقروءة فقط
+                                </p>
+                                #### 6. وضع علامة على الإشعارات كمقروءة <br>
+                                لجعل الإشعارات مقروءة، يمكنك استخدام الطرق التالية: <br>
+                                - **جعل جميع الإشعارات مقروءة**: <br>
+
+                                <p dir="ltr" class="class_p_code_md">
+                                    $user->unreadNotifications->markAsRead();
+                                </p>
+                                - **جعل إشعار معين مقروءًا**: <br>
+
+                                <p dir="ltr" class="class_p_code_md">
+                                    $notification = $user->notifications()->first();
+                                    $notification->markAsRead();
+                                </p>
+                                #### 7. تهيئة عرض الإشعارات في الواجهة <br>
+                                في واجهة المستخدم (Blade)، يمكنك عرض الإشعارات بشكل مناسب. إليك مثال بسيط: <br>
+                                <!-- <pre dir="ltr" class="class_p_code_md">
+                                    @foreach($notifications as $notification)
+                                    <ul>
+                                    <li class="{{ $notification->read_at ? 'read' : 'unread' }}">
+                                        <a href="{{ $notification->data['url'] }}">
+                                            <strong>{{ $notification->data['title'] }}</strong>
+                                            <p>{{ $notification->data['message'] }}</p>
+                                            <small>{{ $notification->created_at->diffForHumans() }}</small>
+                                        </a>
+                                    </li>
+                                </ul>
+                                    @endforeach
+                                </pre> -->
+                                ### ملاحظات إضافية <br>
+                                - يمكنك تخصيص حقول البيانات في `toDatabase` بما يناسب احتياجاتك. <br>
+                                - Laravel يوفر أيضًا `toArray` كبديل لـ `toDatabase` لاستخدام البيانات في قنوات متعددة
+                                مثل `database` و `broadcast` في نفس الوقت. <br>
+                                بهذه الطريقة، يمكنك إرسال الإشعارات إلى قاعدة البيانات وعرضها داخل التطبيق للمستخدمين
+                                بطريقة بسيطة وفعّالة.
+                            </div>
                         </div>
                     </div>
 
