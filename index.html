@@ -53,25 +53,28 @@
         @apply backdrop-filter backdrop-blur bg-white dark:bg-gray-800 bg-opacity-30 shadow;
     }
     .class_div_img {
-        @apply  mt-4 hover:shadow-lg p-2 flex flex-col items-center bg-gray-50 border border-gray-200 rounded-lg shadow md:flex-row md:w-3/4 hover:bg-gray-100 mx-auto dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700
+        @apply  mt-4 hover:shadow-lg p-2 flex flex-col items-center bg-gray-50 border border-gray-200 
+        rounded-lg shadow md:flex-row md:w-full hover:bg-gray-100 mx-auto dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700
         shadow-lg rounded-lg overflow-hidden dark:shadow-gray-50/30
         ;
     }
    .class_img {
-       @apply object-cover h-auto rounded-t-lg  md:h-auto md:w-48 md:rounded-none md:rounded-s-lg
+       @apply w-8/12 lg:w-2/12 md:w-4/12 object-cover h-1/2 rounded-t-lg   md:rounded-none md:rounded-s-lg
          hover:scale-[1.1] transition duration-300 px-2;
    }
    .class_content {
     @apply flex flex-col justify-between p-4 leading-normal text-slate-700 dark:text-slate-300
-    lg:w-9/12 h-auto m-4;
+    lg:w-5/12 h-auto m-4;
    }
    .class_title {
-    @apply  mb-1 text-lg font-bold px-12 text-green-700 dark:text-white flex items-center p-2 text-lg text-green-700 border border-green-300 rounded-lg bg-green-50
+    @apply  mb-1 text-lg font-bold px-12 text-green-700 dark:text-white
+     flex flex-row justify-between 
+      p-2 text-lg text-green-700 border border-green-300 rounded-lg bg-green-50
     hover:bg-green-500 hover:text-white transition-all 
     dark:bg-green-900 dark:text-green-300;
     }
    .class_title_by_arabic {
-       @apply w-1/2 text-lg font-bold px-12 text-pink-700 dark:text-white flex items-center p-2 text-sm text-pink-700 border border-pink-300 rounded-lg bg-pink-50
+       @apply  text-lg font-bold px-12 text-pink-700 dark:text-white flex items-center p-2 text-sm text-pink-700 border border-pink-300 rounded-lg bg-pink-50
        hover:bg-pink-500 hover:text-white transition-all 
     dark:bg-pink-900 dark:text-pink-300 mb-2;
           }
@@ -108,6 +111,22 @@
           dark:bg-gray-800 dark:text-gray-300 text-lg
            hover:shadow-lg transition-all text-base hover:bg-gray-500 hover:text-white;
     }
+    .class_p_code_s {
+        @apply text-xs font-code bg-gray-100 text-gray-600 m-2 dark:text-gray-100
+         border border-gray-300 dark:border-gray-700 p-4 rounded-md
+          dark:bg-gray-800 dark:text-gray-300 
+           hover:shadow-lg transition-all hover:bg-gray-500 hover:text-white;
+    }
+    .class_p_code_md {
+        @apply text-base font-code bg-gray-100 text-gray-600 m-2 dark:text-gray-100
+         border border-gray-300 dark:border-gray-700 p-4 rounded-md
+          dark:bg-gray-800 dark:text-gray-300 
+           hover:shadow-lg transition-all hover:bg-gray-500 hover:text-white;
+    }
+    .class_note_gpt {
+        @apply lg:w-5/12 h-auto p-4 leading-normal text-slate-700 dark:text-slate-300 m-2
+                        border border-gray-300 dark:border-gray-700 rounded-lg
+                        dark:bg-gray-800 dark:text-gray-300 text-lg hover:bg-blue-50 hover:shadow-lg transition-all;    }
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -236,13 +255,16 @@
                 <div class="w-full md:w-10/12 mx-auto">
 
 
-                    <!-- =============== Card 1 =============== -->
+                    <!-- =============== Card مقدمة عن الدورة =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/girl-2.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Intriduction </div>
-                            <h2 class="class_title_by_arabic">مقدمة عن الدورة :</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">مقدمة عن الدورة
+                                    </span> </span>
+                                <span class="text-blue-700">Intriduction</span>
+                            </div>
                             <ul class="class_ul">
                                 <li> Laravel  هو إطار عمل مفتوح المصدر مبني على لغة <span
                                         class="text-blue-700">PHP</span>: </li>
@@ -259,39 +281,97 @@
                                         2011</span></li>
                             </ul>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2"> (Laravel) هو إطار عمل لتطوير تطبيقات الويب مبني على لغة البرمجة
+                                PHP،
+                                وهو يتميز ببنيته الأنيقة وسهولة استخدامه، مما يجعله من أكثر الأطر شيوعًا بين مطوري
+                                الويب. تم تطويره ليوفر بيئة عمل مرنة تتيح للمطورين بناء تطبيقات قوية وفعالة بسرعة
+                                وسهولة. يعتمد لارافيل على معمارية MVC (Model-View-Controller)، والتي تساهم في تنظيم
+                                الكود بشكل يجعل الصيانة والتحديث أسهل. <br>
+                                من أهم مميزات لارافيل:<br>
+                                1. **توجيه URL**: يوفر آلية مبسطة لتعريف مسارات التطبيق.<br>
+                                2. **نظام إدارة قواعد البيانات**: يدعم أنواعًا مختلفة من قواعد البيانات مثل MySQL
+                                وPostgreSQL وSQLite.<br>
+                                3. **نظام قوالب Blade**: لإنشاء واجهات مستخدم ديناميكية.<br>
+                                4. **نظام التحكم بالجلسات والمصادقة**: يسهل إدارة المستخدمين .<br>
+                                5. **Artisan CLI**: أداة سطر أوامر قوية لتوليد الكود وتنفيذ الأوامر المفيدة.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card 3 =============== -->
+                    <!-- =============== Card البدء بتعلم لارافيل =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/girl-3.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Befor Learning Laravel
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">قبل
+                                        البدء بتعلم لارافيل
+                                    </span> </span> <span class="text-blue-700">Befor Learning Laravel</span>
                             </div>
-                            <h2 class="class_title_by_arabic">قبل البدء بتعلم لارافيل:</h2>
                             <ul class="class_ul">
                                 <li> <span class="text-blue-600">معرفة بـ</span>: HTMl. </li>
                                 <li> <span class="text-blue-600">معرفة بـ</span>: CSS. </li>
                                 <li> <span class="text-blue-600">معرفة بـ</span>: Javascript. </li>
                                 <li> <span class="text-blue-600">معرفة بـ</span>: PHP. </li>
                                 <li> <span class="text-blue-600">معرفة بـ</span>: Oop. </li>
+                                <li> <span class="text-blue-600">معرفة بـ</span>: mysql. </li>
+                                <li> <span class="text-blue-600">معرفة بـ</span>: MVC. </li>
+                                <li> <span class="text-blue-600">معرفة بـ</span>: Git & GitHub. </li>
                                 <li> <span class="text-blue-600">معرفة بـ</span>: commend line. </li>
                                 <li> <span class="text-blue-600">أنصح أيضًا بـ</span>: Jquery. – Bootstrap – ajax. </li>
                             </ul>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                قبل البدء بتعلم إطار العمل لارافيل، يُفضَّل أن تكون لديك بعض المهارات الأساسية التي
+                                تساعدك على فهمه وتطبيقه بشكل أفضل، وهي: <br>
+                                ### 1. **أساسيات لغة PHP**
+                                - **المتغيرات**، **التحكم بالمسار** (مثل: `if`, `switch`)، **الحلقات** (`for`, `while`)،
+                                و **الدوال**.
+                                - **التعامل مع المصفوفات** و**الكائنات** (Objects) و **البرمجة كائنية التوجه** (OOP)
+                                لأنها تشكل جزءًا كبيرًا من لارافيل. <br>
+                                ### 2. **معرفة جيدة بـ HTML و CSS و JavaScript**
+                                - هذه الأساسيات تساعدك على بناء واجهات المستخدم وتحسين تجربة الاستخدام في تطبيقك.<br>
+                                ### 3. **فهم قواعد البيانات SQL وMySQL**
+                                - يجب أن تعرف كيفية إنشاء وإدارة قواعد البيانات، التعامل مع الجداول، وكتابة استعلامات
+                                SQL الأساسية، لأن لارافيل يستخدم قواعد البيانات بشكل كبير.<br>
+                                ### 4. **مقدمة في البرمجة الكائنية (OOP)**
+                                - لارافيل يعتمد بشكل كبير على البرمجة الكائنية، ففهم كيفية تعريف الأصناف (Classes)
+                                وإنشاء الكائنات، وتطبيق المبادئ مثل الوراثة (Inheritance) وتعدد الأشكال (Polymorphism)
+                                سيساعدك كثيرًا.<br>
+                                ### 5. **أساسيات الـ MVC**
+                                - نظام الـ MVC (Model-View-Controller) هو معمارية تنظيمية تفصل بين البيانات، منطق العمل،
+                                وواجهة المستخدم، وهي أساس بنية لارافيل. لذا، فهمك له سيسهل عليك فهم كيفية عمل
+                                لارافيل.<br>
+                                ### 6. **التعامل مع Composer وGit**
+                                - Composer هو مدير حزم PHP ويُستخدم لإدارة مكتبات لارافيل، بينما Git ضروري لحفظ وتتبع
+                                التغييرات في الكود.<br>
+                                ### 7. **نصائح تقنية:**
+                                - **بيئة تطوير محلية**: قم بتنزيل وتشغيل بيئة تطوير محلية مثل XAMPP أو Laravel Homestead
+                                أو حتى Valet.
+                                - **التدرب على سطر الأوامر**: سطر الأوامر مهم جداً في لارافيل، حيث يمكنك من خلاله
+                                استخدام أداة Artisan التي تُسهّل العديد من المهام.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card 4 =============== -->
+                    <!-- =============== Card لماذا أتعلم لارافيل؟ =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/girl-1.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Why Learn Laravel:
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">لماذا أتعلم لارافيل؟
+                                    </span> </span>
+                                <span class="text-blue-700">Why Learn Laravel?</span>
                             </div>
-                            <h2 class="class_title_by_arabic">لماذا أتعلم لارافيل؟:</h2>
                             <ul class="class_ul">
-                                <li>لأنه ذكي جدًا.</li>
+                                <li>يعطيك طرق وخيارات عديدة لتنفيذ الكود .</li>
+                                <li>سهولة ومرونة التطوير</li>
                                 <li>واسع الانتشار، له مجتمع كبير جدًا.</li>
+                                <li>تنظيم الكود ومرونة الصيانة</li>
                                 <li> سهولة التعلم فهو يعتمد بنية MVC، وOOP. </li>
                                 <li>بنية ملفات واضحة</li>
                                 <li> قوة هائلة. (متعدد الخيارات) والطرق والأساليب. </li>
@@ -300,27 +380,73 @@
                                 <li> توثيق سهل واضح، وتحتاج أن تكون متوسط في اللغة الإنجليزية. </li>
                             </ul>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                تعلم Laravel له العديد من المزايا التي تجعله اختيارًا رائعًا سواءً للمبتدئين أو
+                                المحترفين في تطوير الويب. إليك بعض الأسباب التي تجعل تعلم Laravel خطوة ممتازة: <br>
+                                ### 1. **سهولة ومرونة التطوير**
+                                - Laravel يسهل عملية تطوير تطبيقات الويب بفضل أدواته الجاهزة، مما يوفر الكثير من الوقت
+                                والجهد في كتابة الأكواد المتكررة. وهذا يساعد المطورين على التركيز على منطق العمل
+                                والابتكار بدلاً من الأمور الأساسية. <br>
+                                ### 2. **مجتمع كبير ودعم قوي**
+                                - Laravel لديه مجتمع كبير ومتفانٍ من المطورين، وهناك الكثير من الموارد التعليمية،
+                                الشروحات، والمقالات التي تساعدك على حل المشكلات التي قد تواجهك. كما أن التحديثات مستمرة
+                                ويتم تحسين النظام بشكل دوري. <br>
+                                ### 3. **تنظيم الكود ومرونة الصيانة**
+                                - يعمل Laravel بمعمارية MVC التي تجعل الكود منظمًا ومنفصلًا إلى أجزاء، مما يسهل صيانة
+                                وتحديث التطبيقات. هذا التنظيم يساعد أيضًا الفرق على التعاون بشكل فعال على نفس
+                                المشروع.<br>
+                                ### 4. **نظام أمان قوي**
+                                - يأتي Laravel بنظام مصادقة قوي ومتكامل يسهل إدارة المستخدمين والتحكم في صلاحياتهم، كما
+                                يتضمن ميزات حماية مثل تجنب ثغرات SQL Injection وCSRF وغيرها.<br>
+                                ### 5. **دعم قواعد البيانات وEloquent ORM**
+                                - يدعم Laravel العديد من قواعد البيانات مثل MySQL وPostgreSQL، كما يحتوي على Eloquent
+                                ORM الذي يسهل التعامل مع قواعد البيانات عبر واجهة كائنية، مما يجعل إدارة البيانات سلسة
+                                وبسيطة.<br>
+                                ### 6. **أدوات قوية لبناء المشاريع**
+                                - يوفر Laravel العديد من الأدوات مثل Artisan CLI، وأداة Migration لإدارة قواعد البيانات،
+                                ونظام Blade Templates لإنشاء واجهات المستخدم، ومكتبة PHPUnit لاختبار التطبيقات.<br>
+                                ### 7. **المرونة في التعامل مع المشاريع المختلفة**
+                                - سواء كنت ترغب في بناء متجر إلكتروني، نظام إدارة محتوى، أو تطبيق تعليمي، Laravel يوفر
+                                لك جميع الأدوات التي تحتاجها. هذه المرونة تجعله مفيدًا لكافة أنواع المشاريع، من الصغيرة
+                                إلى الكبيرة.<br>
+                                ### 8. **قابلية التوسع**
+                                - يمكن تطوير التطبيقات في Laravel بطريقة تسمح بالتوسع مع مرور الوقت ونمو المستخدمين، لذا
+                                فهو مناسب للمشاريع التي تتطلب قابلية توسيع مستقبلية.<br>
+                                ### 9. **التوفر على سوق العمل**
+                                - Laravel من أكثر الأطر طلبًا في سوق العمل. تعلمه يزيد من فرصك في العثور على وظائف أو
+                                مشاريع مستقلة كمطور ويب.<br>
+                                ### 10. **تجربة تطوير ممتعة**
+                                - Laravel يركز على جعل عملية التطوير مريحة وممتعة، بفضل الميزات التي يوفرها والمجتمع
+                                الداعم، وهو ما يجعله إطار عمل محبوبًا لدى العديد من المطورين.<br>
+                                إذا كنت ترغب في بناء تطبيقات ويب عالية الأداء وبتنظيم قوي وأمان محكم، فإن Laravel هو
+                                خيار ممتاز يجعلك مستعدًا لتطوير مشاريع قوية واحترافية.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card 5 =============== -->
+                    <!-- =============== Card تجهيز وتثبيت بيئة لارافيل =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/1.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Invironment
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">تجهيز وتثبيت بيئة لارافيل
+                                    </span> </span>
+                                <span class="text-blue-700">Invironment For Laravel</span>
                             </div>
-                            <h2 class="class_title_by_arabic">تجهيز وتثبيت البيئة:</h2>
 
-                            <div dir="rtl" id="accordion-color" data-accordion="collapse"
+                            <!-- Start Accordion -->
+                            <div id="accordion-color" data-accordion="collapse"
                                 data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+                                <!-- ----------- 1 -->
                                 <h2 id="accordion-color-heading-1">
                                     <button type="button"
-                                        class="flex items-center justify-between w-full p-2 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
-                                        data-accordion-target="#accordion-color-body-1" aria-expanded="true"
+                                        class="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
+                                        data-accordion-target="#accordion-color-body-1" aria-expanded="false"
                                         aria-controls="accordion-color-body-1">
-                                        <span>
-                                            السيرفر <span class="text-amber-600">xampp</span> مع php
-                                        </span>
+                                        <span>تثبيت PHP</span>
                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -332,84 +458,19 @@
                                     aria-labelledby="accordion-color-heading-1">
                                     <div
                                         class="p-2 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                                        <p class="mb-2 text-gray-500 dark:text-gray-400">
-                                            لتثبيت **XAMPP**، وهو حزمة برمجية تتضمن Apache (خادم ويب)، MySQL (قاعدة
-                                            بيانات)، وPHP (لغة برمجة)، يمكنك اتباع الخطوات التالية حسب نظام التشغيل الذي
-                                            تستخدمه:
-
-                                            ### خطوات تثبيت XAMPP:
-
-                                            #### 1. **تنزيل XAMPP**:
-                                            - قم بزيارة الموقع الرسمي لـ
-                                            [XAMPP](https://www.apachefriends.org/index.html).
-                                            - اختر النسخة المناسبة لنظام التشغيل الخاص بك (Windows, Linux, macOS).
-
-                                            #### 2. **تثبيت XAMPP على نظام التشغيل الخاص بك**:
-
-                                            ##### **على Windows:**
-                                            1. بعد تنزيل الملف التنفيذي (EXE)، افتح الملف لبدء التثبيت.
-                                            2. ستظهر نافذة التحكم في حساب المستخدم (UAC) لتحذيرك. اضغط على **Yes**
-                                            للمتابعة.
-                                            3. سيظهر معالج التثبيت:
-                                            - اضغط على **Next**.
-                                            - اختر المكونات التي تريد تثبيتها (بشكل افتراضي، يتم تثبيت Apache وMySQL
-                                            وPHP). إذا كنت لا تحتاج لبعض المكونات، يمكنك إلغاء تحديدها.
-                                            - اضغط على **Next**.
-                                            4. اختر المجلد الذي تريد تثبيت XAMPP فيه (عادةً ما يكون في `C:\xampp`).
-                                            5. اضغط على **Next** ثم **Install** لبدء التثبيت.
-                                            6. بعد اكتمال التثبيت، يمكنك فتح لوحة التحكم الخاصة بـ XAMPP لبدء تشغيل
-                                            خدمات Apache وMySQL.
-
-                                            ##### **على macOS:**
-                                            1. بعد تنزيل الملف (DMG)، افتحه لبدء التثبيت.
-                                            2. اسحب أيقونة XAMPP إلى مجلد التطبيقات.
-                                            3. افتح XAMPP من مجلد التطبيقات.
-                                            4. استخدم لوحة التحكم الخاصة بـ XAMPP لتشغيل Apache وMySQL.
-
-                                            ##### **على Linux:**
-                                            1. بعد تنزيل الملف (عادةً يكون امتداده `.run`)، افتح Terminal وانتقل إلى
-                                            المجلد الذي تم فيه تنزيل الملف.
-                                            2. امنح إذنًا لتشغيل الملف:
-                                            ```bash
-                                            sudo chmod +x xampp-linux-x64-<version>.run
-                                                ```
-                                                3. قم بتشغيل ملف التثبيت باستخدام الأمر التالي:
-                                                ```bash
-                                                sudo ./xampp-linux-x64-<version>.run
-                                                    ```
-                                                    4. اتبع التعليمات الظاهرة على الشاشة لإكمال التثبيت.
-                                                    5. بعد التثبيت، يمكنك بدء XAMPP باستخدام الأمر:
-                                                    ```bash
-                                                    sudo /opt/lampp/lampp start
-                                                    ```
-
-                                                    #### 3. **بدء استخدام XAMPP**:
-                                                    - بعد تثبيت XAMPP، يمكنك فتح لوحة التحكم الخاصة به من أجل بدء خدمات
-                                                    مثل **Apache** و**MySQL**.
-                                                    - يمكنك الوصول إلى لوحة التحكم عبر:
-                                                    - **Windows:** افتح لوحة التحكم الخاصة بـ XAMPP من أيقونة البرنامج
-                                                    بعد التثبيت.
-                                                    - **macOS/Linux:** استخدام الأوامر أو الواجهة الرسومية حسب التثبيت.
-
-                                                    #### 4. **الوصول إلى لوحة التحكم (phpMyAdmin)**:
-                                                    - بمجرد تشغيل Apache وMySQL، افتح متصفح الويب واكتب العنوان التالي
-                                                    للوصول إلى **phpMyAdmin** وإدارة قواعد البيانات:
-                                                    ```
-                                                    http://localhost/phpmyadmin/
-                                                    ```
-
-                                                    بذلك تكون قد أكملت تثبيت XAMPP وأصبحت جاهزًا للبدء بتطوير تطبيقاتك
-                                                    باستخدام PHP وMySQL.
+                                        <p class="mb-2 text-gray-500 dark:text-gray-400">Laravel يعتمد على لغة PHP، لذلك
+                                            تأكد من أن لديك PHP بإصدار 8.0 أو أعلى. يمكنك تحميل PHP من الموقع الرسمي أو
+                                            تثبيته من خلال بيئة تطوير محلية مثل XAMPP أو MAMP التي تأتي معه مسبقًا.
                                         </p>
-
                                     </div>
                                 </div>
+                                <!-- ----------- 2 -->
                                 <h2 id="accordion-color-heading-2">
                                     <button type="button"
-                                        class="flex items-center justify-between w-full p-2 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
+                                        class="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
                                         data-accordion-target="#accordion-color-body-2" aria-expanded="false"
                                         aria-controls="accordion-color-body-2">
-                                        <span>تثبيت <span class="text-amber-600">Composer</span> مدير الحزم.</span>
+                                        <span>تثبيت Composer</span>
                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -420,18 +481,18 @@
                                 <div id="accordion-color-body-2" class="hidden"
                                     aria-labelledby="accordion-color-heading-2">
                                     <div class="p-2 border border-b-0 border-gray-200 dark:border-gray-700">
-                                        <p class="mb-2 text-gray-500 dark:text-gray-400">كيفية تثبيت الحزم.</p>
+                                        <p class="mb-2 text-gray-500 dark:text-gray-400">Composer هو مدير الحزم في PHP،
+                                            ويُستخدم لتثبيت وإدارة مكتبات Laravel. يمكنك تحميل Composer من الموقع الرسمي
+                                            واتباع تعليمات التثبيت.</p>
                                     </div>
                                 </div>
+                                <!-- ----------- 3 -->
                                 <h2 id="accordion-color-heading-3">
                                     <button type="button"
-                                        class="flex items-center justify-between w-full p-2 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
+                                        class="flex items-center justify-between w-full p-4 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3"
                                         data-accordion-target="#accordion-color-body-3" aria-expanded="false"
                                         aria-controls="accordion-color-body-3">
-                                        <span>
-                                            تثبيت <span class="text-amber-600">nodejs</span> من أجل npm: Node.js package
-                                            manager
-                                        </span>
+                                        <span>إنشاء مشروع Laravel</span>
                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -442,30 +503,78 @@
                                 <div id="accordion-color-body-3" class="hidden"
                                     aria-labelledby="accordion-color-heading-3">
                                     <div class="p-2 border border-t-0 border-gray-200 dark:border-gray-700">
-                                        <p class="mb-2 text-gray-500 dark:text-gray-400">كيفية تثبيت مدير الحزم</p>
-                                        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                                            <li><a href="https://flowbite.com/pro/"
-                                                    class="text-blue-600 dark:text-blue-500 hover:underline">من
-                                                    موقعهم</a></li>
-                                        </ul>
+                                        <p class="mb-2 text-gray-500 dark:text-gray-400">
+                                        <div class="run_command_small">
+                                            composer create-project --prefer-dist laravel/laravel my_project_name
+                                        </div>
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
+                            <!-- End Accordion -->
+                        </div>
+
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                تجهيز وتثبيت بيئة Laravel يتطلب بعض الخطوات الأساسية لإعداد البيئة وتثبيت الإطار بنجاح.
+                                سأقوم بتوضيح الخطوات بشكل مبسط ومنظم. <br>
+
+                                ### الخطوات الأساسية لتجهيز وتثبيت Laravel:<br>
+
+                                1. **تثبيت Composer**:<br>
+                                - Composer هو مدير الحزم في PHP، ويُستخدم لتثبيت Laravel. يمكنك تنزيله من
+                                [getcomposer.org](https://getcomposer.org/) واتباع التعليمات للتثبيت. <br>
+                                2. **تثبيت PHP**:
+                                - Laravel يتطلب PHP 8.0 أو أحدث. تأكد من تثبيت الإصدار المناسب من PHP على جهازك. يمكنك
+                                استخدام XAMPP أو MAMP أو LAMP لتثبيت PHP مع Apache وMySQL.<br>
+                                3. **إعداد قاعدة البيانات**:
+                                - يمكنك استخدام MySQL أو أي نظام إدارة قواعد بيانات مدعوم. تأكد من إعداد قاعدة البيانات
+                                ووجود معلومات الاتصال بها مثل اسم المستخدم وكلمة المرور.<br>
+                                4. **تثبيت Laravel باستخدام Composer**:
+                                - افتح سطر الأوامر (Terminal أو Command Prompt) واستخدم الأمر التالي لتثبيت Laravel:
+                                ```bash
+                                composer create-project --prefer-dist laravel/laravel اسم-المشروع <br>
+                                5. **إعداد خادم محلي**:
+                                - يمكنك استخدام الخادم المدمج في Laravel عبر الأمر التالي لتشغيل التطبيق:
+                                ```bash
+                                php artisan serve
+                                ``` - سيعمل التطبيق عادةً على الرابط `http://localhost:8000`. <br>
+                                6. **تهيئة ملف البيئة `.env`**:
+                                - بعد تثبيت Laravel، ستجد ملف `.env` في مجلد المشروع. قم بتحديث إعدادات قاعدة البيانات
+                                والمعلومات الأخرى حسب الحاجة.<br>
+                                7. **تثبيت Node.js وNPM** (اختياري):
+                                - إذا كنت ستستخدم ميزات مثل Mix لتجميع الأصول (CSS وJavaScript)، ستحتاج إلى تثبيت
+                                Node.js وNPM.<br>
+                                8. **تثبيت الحزم الأمامية** (اختياري):
+                                - استخدم الأوامر التالية لتثبيت وتجميع الأصول الأمامية: <br>
+                                ```bash
+                                npm install
+                                npm run dev
+                                ``` <br>
+                                ### ملخص:
+                                تلك هي الخطوات الأساسية لتجهيز وتثبيت بيئة Laravel. باتباع هذه الخطوات، يمكنك إعداد
+                                مشروع Laravel والعمل عليه بسهولة. إذا واجهت أي مشاكل، تأكد من قراءة الوثائق الرسمية لـ
+                                Laravel أو البحث عن الحلول عبر الإنترنت.
                             </div>
                         </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: تثبيت الإضافات =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/extintion.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                extension
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">تثبيت الإضافات
+                                    </span> </span>
+                                <span class="text-blue-700">Extension</span>
                             </div>
-                            <h2 class="class_title_by_arabic">تثبيت الإضافات:</h2>
+
                             <ul class="class_ul">
                                 <li> Auto Close Tag: <span class="text-green-700">الإغلاق التلقائي للوسوم</span> </li>
                                 <li> Auto Rename Tag: <span class="text-green-700">إعادة التسمية التلقائية</span> </li>
-                                <li> indent-rainbow: <span class="text-green-700">يقوم هذا الامتداد بتلوين المسافة
+                                <li> indent-rainbow: <span class="text-green-700"> الامتداد بتلوين المسافة
                                         البادئة أمام النص الخاص بك . </span></li>
                                 <li> Gitlens: <span class="text-green-700">يساعدك على فهم التعليمات البرمجية بشكل أفضل.
                                     </span> </li>
@@ -473,7 +582,11 @@
                                 <li> Laravel Blade formatter: <span class="text-green-700">تنسيق أكواد البليد
                                         لارافيل</span> </li>
                                 <li> Laravel Blade Snippets: <span class="text-green-700">اقتراح أكواد</span> </li>
+                                <li> Laravel goto view: <span class="text-green-700">الذهاب إلى الصفحة</span> </li>
+
                                 <li> Live Server: <span class="text-green-700">سيرفر محلي</span> </li>
+                                <li> Live sass compiler: <span class="text-green-700">ساس</span> </li>
+
                                 <li> Material Icon Theme: <span class="text-green-700">الثيمات</span> </li>
                                 <li> Path Autocomplete: <span class="text-green-700">إكمال المسار</span> </li>
                                 <li> Path Intellisense: <span class="text-green-700">إكمال مسار الملفات</span> </li>
@@ -483,18 +596,93 @@
                                 <li> Prettier - Code formatter: <span class="text-green-700">تحسين مظهر الأكواد</span>
                                 </li>
                                 <li> Rainbow Tags: <span class="text-green-700">تلوين الوسوم</span> </li>
+                                <li> :emojisense: <span class="text-green-700">إقتراح الإيموجي</span> </li>
+                                <li> Codeium Companion: <span class="text-green-700">ذكاء إصطناعي</span> </li>
+                                <li> Tailwind CSS Intellisense: <span class="text-green-700">إقتراح التايلويند</span>
+                                </li>
+                                <li>وهناك الكثير من الإضافات يتم تحميلها وقت الحاجة إليها</li>
                             </ul>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                هناك العديد من الإضافات المفيدة في **Visual Studio Code** لمساعدتك على العمل بكفاءة أكبر
+                                عند تطوير مشاريع Laravel. إليك أهم هذه الإضافات: <br>
+
+                                ### 1. **Laravel Blade Snippets**
+                                - توفر هذه الإضافة اختصارات للأوامر والقوالب المستخدمة في ملفات **Blade** الخاصة بـ
+                                Laravel، مما يساعدك على كتابة أكواد واجهة المستخدم بشكل أسرع.
+                                - يمكنك إدراج أوامر **Blade** مثل `@foreach` و `@if` بضغطة زر. <br>
+
+                                ### 2. **Laravel Extra Intellisense**
+                                - هذه الإضافة تضيف ميزة التكملة التلقائية (Intellisense) للواجهات والأوامر الخاصة بـ
+                                Laravel، مما يسهل التنقل بين الأكواد الخاصة بالإطار وتحسين سرعة البرمجة.<br>
+
+                                ### 3. **PHP Intelephense**
+                                - **Intelephense** هو محلل شيفرة PHP يقدم تكملة تلقائية متقدمة، وتصحيح الأخطاء وتحليل
+                                الشيفرة. يساعد كثيرًا في اكتشاف الأخطاء وتحسين الكود، ويعمل بشكل رائع مع Laravel.<br>
+
+                                ### 4. **Laravel Artisan**
+                                - تتيح لك هذه الإضافة تشغيل أوامر **Artisan** مباشرة من VS Code. يمكنك إنشاء جداول
+                                جديدة، تشغيل **migrations**، وتحديث المشاريع بدون الحاجة للانتقال إلى سطر الأوامر.<br>
+
+                                ### 5. **Laravel Blade Formatter**
+                                - تساعد هذه الإضافة في تنسيق ملفات **Blade** الخاصة بـ Laravel تلقائيًا، مما يجعل الكود
+                                أسهل للقراءة والصيانة.<br>
+
+                                ### 6. **DotENV**
+                                - توفر هذه الإضافة تمييزًا للألوان وتنسيقًا خاصًا بملفات `.env`، حيث تُستخدم في Laravel
+                                لتخزين معلومات البيئة وإعدادات التطبيق، مثل بيانات قاعدة البيانات.<br>
+
+                                ### 7. **Auto Import - ES6, TS, JSX, TSX**
+                                - إضافة **Auto Import** مفيدة لاستيراد الملفات والأكواد بشكل تلقائي. تساعد في جلب
+                                العناصر والواجهات بسهولة، مما يسهل تطوير تطبيقات كبيرة.<br>
+
+                                ### 8. **PHP Namespace Resolver**
+                                - تساعد هذه الإضافة في تنظيم المساحات، بحيث يمكنك إضافة واستخدام **namespaces** بسهولة،
+                                وهي مفيدة لترتيب الكود في Laravel بشكل احترافي.<br>
+
+                                ### 9. **GitLens**
+                                - **GitLens** يضيف وظائف متقدمة لتتبع التعديلات ومعرفة تاريخ التغييرات في الكود مباشرة
+                                داخل VS Code، مما يجعله مثاليًا للعمل الجماعي أو تتبع النسخ.<br>
+
+                                ### 10. **Prettier - Code Formatter**
+                                - إضافة **Prettier** تستخدم لتنسيق الكود بشكل احترافي، وهي مفيدة مع HTML وCSS
+                                وJavaScript وأحيانًا حتى مع ملفات PHP وBlade.<br>
+
+                                ### 11. **Path Autocomplete**
+                                - توفر ميزة الإكمال التلقائي للمسارات عند كتابة الروابط أو استيراد الملفات، مما يوفر
+                                الوقت ويقلل من الأخطاء في الإملاء.<br>
+
+                                ### 12. **PHP Debug**
+                                - تساعد هذه الإضافة في إجراء تصحيح الأخطاء (Debugging) باستخدام Xdebug. يمكنك تعقب
+                                الشيفرة البرمجية بشكل مباشر، مما يجعل إصلاح الأخطاء أسرع.<br>
+
+                                ### 13. **Bracket Pair Colorizer**
+                                - تسهّل إضافة **Bracket Pair Colorizer** على المطور تمييز الأقواس المتداخلة، وهي مفيدة
+                                لكتابة وتنظيم الشيفرة بشكل أفضل.<br>
+
+                                ### **كيفية تثبيت الإضافات**
+                                - يمكنك تثبيت أي من هذه الإضافات بالذهاب إلى **Marketplace** داخل VS Code والبحث عن اسم
+                                الإضافة، ثم النقر على **Install**.<br>
+
+                                ### **تجهيز VS Code للعمل مع Laravel**
+                                - بمجرد تثبيت هذه الإضافات، ستساعدك على جعل بيئة التطوير في VS Code أكثر فعالية وإنتاجية
+                                عند بناء تطبيقات Laravel.<br>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: تثبيت لارافيل =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/laravel.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                install laravel
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">تثبيت لارافيل
+                                    </span> </span>
+                                <span class="text-blue-700">install laravel</span>
                             </div>
-                            <h2 class="class_title_by_arabic">تثبيت لارافيل:</h2>
                             <div class="note_purple">
                                 إنشاء المجلد الذي تريد تنزيل المشروع فيه.
                             </div>
@@ -514,16 +702,42 @@
                                 نصيحة:- احتفظ بنسخة من الملفات التي تم تنزيلها من أجل توفير الكثير من الجهد والمال.
                             </span>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                لتثبيت Laravel، اتبع هذه الخطوات البسيطة: <br>
+                                #### 1. **تثبيت Composer**
+                                - إذا لم يكن لديك Composer مثبتًا، يمكنك تحميله وتثبيته من [الموقع الرسمي لـ
+                                Composer](https://getcomposer.org/download/). بعد التثبيت، تأكد من أنه يعمل بكتابة:
+                                composer -v ``` <br>
+                                #### 2. **تثبيت Laravel باستخدام Composer**
+                                - يمكنك تثبيت Laravel بطرق مختلفة. الطريقة الأكثر شيوعًا هي استخدام أمر `create-project`
+                                الخاص بـ Composer. <br>
+                                **الخطوة:**
+                                1. افتح سطر الأوامر، ثم انتقل إلى المجلد الذي تريد إنشاء مشروع Laravel فيه.
+                                2. قم بكتابة الأمر التالي:
+                                ```bash
+                                composer create-project --prefer-dist laravel/laravel my_project_name
+                                ```<br>
+                                **الخطوة:** <br>
+                                php artisan serve
+                                ``` <br>
+                                3. بعد التشغيل، يجب أن يعمل مشروعك على الرابط
+                                [http://127.0.0.1:8000](http://127.0.0.1:8000).
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: تشغيل مشروع لارافيل =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/run.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Run Application
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">تشغيل مشروع لارافيل
+                                    </span> </span>
+                                <span class="text-blue-700">Run Laravel</span>
                             </div>
-                            <h2 class="class_title_by_arabic">تشغيل المشروع:</h2>
                             <span class="run_command">
                                 <span class="text-amber-700">php</span> artisan serv
                             </span>
@@ -532,32 +746,113 @@
                                 http:///localhost:8000
                             </span>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                لتشغيل مشروع Laravel بعد تثبيته، يمكنك اتباع الخطوات التالية: <br>
+                                ### 1. **الدخول إلى مجلد المشروع**
+                                - أولًا، افتح سطر الأوامر (Terminal أو Command Prompt) وانتقل إلى مجلد مشروع Laravel
+                                الخاص بك. إذا كان المشروع موجودًا في مجلد باسم `my_project_name`، فيمكنك الدخول إليه
+                                عبر:
+                                cd my_project_name <br>
+                                ### 2. **تشغيل الخادم المحلي باستخدام Artisan**
+                                - Laravel يأتي مع أداة سطر الأوامر **Artisan**، والتي تحتوي على أوامر متعددة لتسهيل
+                                تطوير المشاريع. لتشغيل الخادم المحلي، استخدم الأمر:
+                                php artisan serve <br>
+                                - بعد تشغيل هذا الأمر، سيظهر لك رابط عادة يكون على الشكل: <br>
+                                http://127.0.0.1:8000 <br>
+                                - افتح المتصفح وانتقل إلى [http://127.0.0.1:8000](http://127.0.0.1:8000)، وستظهر لك
+                                الصفحة الرئيسية لمشروع Laravel. <br>
+                                ### 3. **إعدادات الخادم المحلي (اختياري)**
+                                - يمكنك تغيير المنفذ الافتراضي (port) 8000 إلى منفذ آخر عبر إضافة `--port` إلى الأمر،
+                                كما يلي:
+                                php artisan serve --port=8080 <br>
+                                - هذا سيجعل الخادم يعمل على الرابط [http://127.0.0.1:8080](http://127.0.0.1:8080). <br>
+                                ### 4. **الاتصال بقاعدة البيانات**
+                                - تأكد من أنك أعددت الاتصال بقاعدة البيانات في ملف `.env` الخاص بالمشروع، ثم شغّل الخادم
+                                <br>
+                                ### **إيقاف تشغيل الخادم**
+                                - لإيقاف تشغيل الخادم المحلي، يمكنك ببساطة الضغط على **Ctrl + C** في نافذة سطر الأوامر
+                                التي تعمل بها.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: التوثيق في لارافيل =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/doc.png" alt="">
                         <div class="class_content">
                             <div class="class_title">
-                                <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                documentation
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">التوثيق في لارافيل
+                                    </span> </span>
+                                <span class="text-blue-700">documentation</span>
                             </div>
-                            <h2 class="class_title_by_arabic">التوثيق:</h2>
                             <span class="note_indigo">
                                 أفضل توثيق وشرح لإطار عمل لارافيل هو موقع لارافيل
-                                -
-                                https://laravel.com/docs/11.x
                             </span>
+                            <p class="class_p_r">
+                                توفر Laravel نظامًا متكاملًا للتوثيق (Documentation) الذي يساعد المطورين على فهم أطار
+                                العمل واستخدام ميزاته بكفاءة. يمكن الاطلاع على التوثيق الرسمي من خلال [موقع
+                                Laravel](https://laravel.com/docs)، حيث يتم تحديثه مع كل أصدار جديد. <br>
+                                ### أهمية التوثيق في Laravel
+                                التوثيق في Laravel يعدّ من أفضل التوثيقات في أطر العمل، حيث يتميز بالشمولية والتنظيم،
+                                ويغطي جميع الجوانب الضرورية لتطوير المشاريع باستخدام Laravel. يُعتبر التوثيق مرجعًا
+                                رئيسيًا لكافة المطورين، سواء كانوا مبتدئين أو محترفين.
+                            </p>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                ### مكونات التوثيق في Laravel <br>
+                                1. **مقدمة (Getting Started)** <br>
+                                - تشمل تعليمات التثبيت، وشرح المشروع وأهم الأدوات المستخدمة مثل Composer
+                                وArtisan. <br>
+                                2. **الأساسيات (The Basics)** <br>
+                                - يحتوي هذا القسم على شرح كامل لميزات Laravel الأساسية مثل التوجيه (Routing)، وعرض
+                                البيانات (Views)، والتحكم بالجداول (Controllers)، وغيرها من أساسيات MVC. <br>
+                                3. **الأمان (Security)** <br>
+                                - يتضمن شرحًا مفصلًا عن ميزات الحماية في Laravel، مثل التحقق من المستخدمين
+                                (Authentication)، وتحديد الصلاحيات (Authorization)، ومنع الهجمات (CSRF Protection). <br>
+                                4. **قواعد البيانات (Database)** <br>
+                                - تغطي توثيق قواعد البيانات كيفية إعدادها، وطريقة الربط بها عبر Eloquent ORM، وكيفية
+                                كتابة استعلامات وتطبيق العمليات على الجداول باستخدام Migrations وSeeders. <br>
+                                5. **التنبيهات والإشعارات (Notifications)** <br>
+                                - توضح كيفية إرسال التنبيهات عبر قنوات مثل البريد الإلكتروني وSlack
+                                والرسائل النصية. <br>
+                                6. **التنظيمات المتقدمة (Advanced Topics)** <br>
+                                - يتضمن هذا القسم موضوعات متقدمة مثل الأحداث (Events) والمهام المجدولة (Scheduling
+                                Tasks) والمعالجة المتزامنة (Queues) والتخزين (Storage). <br>
+                                7. **اختبار التطبيقات (Testing)** <br>
+                                - يغطي كيفية اختبار الشيفرة، باستخدام وحدات اختبار PHPUnit، ويشمل توثيقًا لأنواع
+                                الاختبارات، سواءً كانت وحدات، أو تكامل، أو وظائف كاملة. <br>
+                                8. **واجهة برمجة التطبيقات API** <br>
+                                - يتضمن هذا القسم كيفية بناء API، واستخدام الميزة API Resources لتنسيق الردود
+                                (Responses)، وإدارة التوثيق الخاصة بها. <br>
+                                9. **قابلية التوسيع والتخصيص** <br>
+                                - يحتوي التوثيق على معلومات حول كيفية إنشاء خدمات مخصصة، وإضافة وظائف خاصة لمشاريع
+                                Laravel، وتطوير حزم خاصة. <br>
+                                ### أدوات التوثيق <br>
+                                يمكنك أيضًا استخدام توثيق Laravel كمصدر لأسئلة المقابلات أو التدريبات العملية، إذ يمكن
+                                تخصيص أوقات معينة لقراءة الأقسام المتعلقة بكل ميزة ترغب في تعلمها وتجربتها في مشروع
+                                فعلي. <br>
+                                ### توثيق المشاريع الخاصة <br>
+                                إذا كنت ترغب بتوثيق مشروعك الخاص في Laravel، يمكنك استخدام أدوات مثل **Swagger** أو
+                                **Postman** لتوثيق الـ API، أو كتابة مستندات Markdown لشرح بنية المشروع، ووظائف كل جزء
+                                منه.
+                            </div>
                         </div>
                     </div>
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: الأدلة في لارافيل =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/directories.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                directories
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">الأدلة في لارافيل
+                                    </span> </span>
+                                <span class="text-blue-700">directories</span>
                             </div>
-                            <h2 class="class_title_by_arabic">الأدلة:</h2>
                             <ul class="class_ul text-blue-600">
                                 <li> app </li>
                                 <li> bootstrap </li>
@@ -571,16 +866,95 @@
                                 <li> tests </li>
                                 <li> vendor </li>
                             </ul>
+                            <ul class="text-gray-600 px-16">
+                                <li>.editorConfig</li>
+                                <li>.env</li>
+                                <li>.env.example</li>
+                                <li>.gitattributes</li>
+                                <li>.gitignore</li>
+                                <li>Artisan</li>
+                                <li>composer.json</li>
+                                <li>composer.lock</li>
+                                <li>package-lock.json</li>
+                                <li>package.json</li>
+                                <li>phpunit.xml</li>
+                                <li>vite.config.js</li>
+                            </ul>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                عند العمل في مشروع Laravel، ستتعامل مع عدة مجلدات (directories) مهمة ضمن هيكلية المشروع.
+                                هذه المجلدات تنظم الأكواد المختلفة وتساعد في تطبيق مبدأ الفصل بين منطق العمل والواجهة،
+                                مما يسهل تطوير وصيانة المشروع. إليك أهم المجلدات واستخداماتها: <br>
+                                ### 1. **مجلد `app/`**<br>
+                                - يحتوي على معظم الأكواد البرمجية الخاصة بالتطبيق (مثل: Controllers، Models،
+                                Middleware). <br>
+                                - **أهم المجلدات الفرعية داخله:** <br>
+                                - **`Http/`**: يحتوي على المجلدات الخاصة بـ **Controllers**، **Middleware**، وملف
+                                **Routes**. <br>
+                                - **`Models/`**: يحتوي على **النماذج** (Models) التي تمثل جداول قواعد البيانات وتتعامل
+                                معها عبر ORM. <br>
+                                - **`Console/`**: يشمل الأوامر المخصصة لـ **Artisan**. <br>
+                                - **`Providers/`**: يحتوي على **Service Providers**، التي تسجل الخدمات المطلوبة أثناء
+                                تشغيل التطبيق. <br>
+                                ### 2. **مجلد `bootstrap/`** <br>
+                                - يحتوي على ملفات تهيئة وإعداد التطبيق قبل التشغيل. المجلد يحتوي على ملف **app.php**
+                                الذي يقوم بتهيئة التطبيق عند كل طلب. <br>
+                                - يشمل مجلد **cache/** الذي يخزن المعلومات المخبأة. <br>
+                                ### 3. **مجلد `config/`**<br>
+                                - يحتوي على جميع ملفات **الإعدادات** لتطبيق Laravel، مثل إعدادات **القاعدة البيانات**،
+                                <br>
+                                **البريد**، **التخزين**، **التوجيه**، وغيرها. يمكن تخصيص كل ملف لتعديل الإعدادات دون
+                                الحاجة لتعديل الشيفرة البرمجية مباشرة. <br>
+                                ### 4. **مجلد `database/`** <br>
+                                - يشمل الملفات المتعلقة بقواعد البيانات، مثل: <br>
+                                - **migrations/**: ملفات إنشاء الجداول في قاعدة البيانات. <br>
+                                - **factories/**: لإنشاء بيانات تجريبية تلقائيًا عند الاختبار. <br>
+                                - **seeders/**: لإدخال بيانات تجريبية أو أولية في قاعدة البيانات. <br>
+                                ### 5. **مجلد `public/`**<br>
+                                - هو المجلد الذي يتم الوصول إليه من قِبل المستخدمين عند فتح التطبيق، ويحتوي على:<br>
+                                - ملف **index.php**: نقطة الدخول الرئيسية للتطبيق.<br>
+                                - **ملفات الواجهات** مثل CSS، JavaScript، والصور.<br>
+                                ### 6. **مجلد `resources/`**<br>
+                                - يحتوي على الملفات المتعلقة بواجهات التطبيق وتنسيقها. <br>
+                                - **views/**: ملفات **Blade** الخاصة بعرض واجهة المستخدم. <br>
+                                - **lang/**: يحتوي على ملفات **اللغات** للترجمة في التطبيق. <br>
+                                - **js/** و **css/**: ملفات JavaScript وCSS للواجهات. <br>
+                                ### 7. **مجلد `routes/`** <br>
+                                - يحتوي على ملفات **التوجيه** الخاصة بالتطبيق. <br>
+                                - **web.php**: يحتوي على التوجيهات الخاصة بواجهات الويب. <br>
+                                - **api.php**: يحتوي على التوجيهات الخاصة بواجهة API. <br>
+                                - **console.php**: لأوامر Artisan.<br>
+                                - **channels.php**: لقنوات بث الأحداث والأحداث الفورية.<br>
+                                ### 8. **مجلد `storage/`**<br>
+                                - يخزن ملفات الجلسات (Sessions)، **التخزين المؤقت** (Cache)، **التقارير** (Logs)، وملفات
+                                المستخدمين.<br>
+                                - **app/**: لتخزين الملفات التي يتم رفعها من قبل المستخدمين.<br>
+                                - **framework/**: يحتوي على ملفات التخزين المؤقت (Sessions وCache).<br>
+                                - **logs/**: ملفات السجلات الخاصة بتطبيق Laravel.<br>
+                                ### 9. **مجلد `tests/`**<br>
+                                - يحتوي على ملفات **الاختبارات** للوحدات والتكامل. يتم ترتيب ملفات الاختبار داخل هذا
+                                المجلد حسب نوعها، مما يسهل التأكد من أداء التطبيق بشكل جيد قبل النشر.<br>
+                                ### 10. **مجلد `vendor/`**<br>
+                                - يتم فيه تخزين **الحزم** (Packages) التي تم تثبيتها عبر **Composer**. يشمل جميع مكتبات
+                                Laravel وأي مكتبات خارجية.<br>
+                                ### 11. **ملف `.env`**<br>
+                                - ليس مجلدًا، لكنه ملف أساسي يحتوي على **إعدادات البيئة**، مثل إعدادات قاعدة البيانات،
+                                وبيانات الدخول للخدمات، وإعدادات الأمان.<br>
+                            </div>
                         </div>
                     </div>
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card ::  الوسيط=============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/middleware.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                middleware
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">الوسيط
+                                    </span> </span>
+                                <span class="text-blue-700">middleware</span>
                             </div>
-                            <h2 class="class_title_by_arabic">الوسيط:</h2>
                             <span class="run_command">
                                 <span class="text-amber-700">php</span> artisan make:middleware <span
                                     class="text-green-700">Name</span>
@@ -611,20 +985,66 @@
                                 <span class="text-yellow-400">middleware</span>
                                 (<span class="text-amber-600">Name</span>);
                             </p>
-
                             <div class="note_indigo"> في الإصدار الجديد 11 - App – alias – middleware </div>
-
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                يُستخدم Middleware كطبقة وسيطة لمعالجة الطلبات HTTP قبل وصولها إلى
+                                التطبيق أو بعدها. يمكن اعتباره كحارس بين المستخدم والتطبيق، حيث يقوم بإجراء عمليات
+                                على الطلبات أو الاستجابات. <br>
+                                على سبيل المثال، يمكن لـ Middleware أن: <br>
+                                1. يتحقق من تسجيل دخول المستخدم قبل السماح له بالوصول إلى أجزاء معينة من التطبيق. <br>
+                                2. يتحقق من صلاحيات المستخدم ويحدد ما إذا كان لديه الصلاحية للوصول إلى موارد معينة. <br>
+                                3. يعالج طلبات CORS (مشاركة الموارد عبر المواقع) أو يضيف رؤوس HTTP (headers) معينة. <br>
+                                ### كيفية إنشاء Middleware في لارافيل <br>
+                                يمكنك إنشاء Middleware جديد باستخدام الأمر: <br>
+                                <p class="run_command_small">
+                                    php artisan make:middleware CheckAge <br>
+                                </p>
+                                ### مثال عملي على Middleware <br>
+                                لنفرض أنك تريد منع المستخدمين الذين تقل أعمارهم عن 18 عامًا من الوصول إلى بعض الصفحات.
+                                <br>
+                                يمكنك إنشاء Middleware يتأكد من أن المستخدم يبلغ 18 عامًا على الأقل: <br>
+                                // في ملف app/Http/Middleware/CheckAge.php <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    namespace App\Http\Middleware; <br>
+                                    use Closure; <br>
+                                    use Illuminate\Http\Request; <br>
+                                    class CheckAge { <br>
+                                    public function handle(Request $request, Closure $next)
+                                    {
+                                    if ($request->age = 18) { return redirect('home'); } return $next($request); } }
+                                </p>
+                                ### تسجيل Middleware لتفعيل Middleware، يجب إضافته إلى التطبيق. يمكن القيام بذلك
+                                في **الملف `Kernel.php`** داخل **المصفوفة `$routeMiddleware`**. ```php // في ملف
+                                app/Http/Kernel.php protected $routeMiddleware=[ 'checkAge'=>
+                                \App\Http\Middleware\CheckAge::class,
+                                ]; <br>
+                                ### استخدام Middleware <br>
+                                يمكنك تطبيق هذا Middleware على مسار معين باستخدام الكلمة المفتاحية `middleware`
+                                في
+                                <br>
+                                تعريف المسارات: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    Route::get('profile', function () { <br>
+                                    // بعض التعليمات br
+                                    })->middleware('checkAge');
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- ==================== card ::: ================== -->
+                    <!-- ==================== card :: قواعد البيانات والتهجير ================== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/database.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Database And Migration
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">قواعد البيانات والتهجير
+                                    </span> </span>
+                                <span class="text-blue-700">Database And Migration</span>
                             </div>
-                            <h2 class="class_title_by_arabic">قواعد البيانات والتهجير:</h2>
                             <span class="run_command">
                                 <span class="text-amber-700">php</span> artisan make:migration <span
                                     class="text-green-700">create_users_table</span>
@@ -663,16 +1083,47 @@
                             </div>
                             </p>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                في Laravel، *قاعدة البيانات* (*Database*) و *الهجرة* (*Migration*) هما جزءان أساسيان
+                                لتطوير التطبيقات التي تعتمد على البيانات. لنلقِ نظرة على كل واحد منهما: <br>
+                                ### 1. قاعدة البيانات (Database) <br>
+                                قاعدة البيانات هي المكان الذي يتم فيه تخزين بيانات التطبيق مثل بيانات المستخدمين،
+                                المنتجات، الطلبات، إلخ. في Laravel، يمكنك التعامل مع قواعد البيانات باستخدام واجهة
+                                الاستعلامات (Query Builder) أو ORM المدمج (Eloquent) الذي يوفر طريقة سهلة للتعامل مع
+                                البيانات ككائنات. <br>
+                                ### 2. الهجرة (Migration) <br>
+                                الهجرة هي آلية لإدارة وتحديث هيكل قاعدة البيانات بطريقة منظمة ومتحكم بها. يتم استخدام
+                                الهجرات لتعريف الجداول وتعديلها في قاعدة البيانات باستخدام كود PHP بدلاً من إنشاء
+                                الجداول يدويًا في قاعدة البيانات. الهجرة تشبه سجل التعديلات، حيث يمكنك استخدامه لمزامنة
+                                الهيكل عبر بيئات تطوير متعددة. <br>
+                                ### كيفية استخدام الهجرة في Laravel <br>
+                                - لإنشاء ملف هجرة جديد، يمكنك استخدام الأمر التالي في الـ Terminal:
+                                <p class="run_command_small">
+                                    php artisan make:migration create_users_table
+                                </p>
+                                هذا الأمر سينشئ ملفًا في مجلد `database/migrations` يحتوي على هيكل جدول "المستخدمين".
+                                <br>
+                                - بعد إنشاء ملف الهجرة وتحديد الأعمدة داخله، يمكنك تنفيذ الهجرة باستخدام الأمر:
+                                <p class="run_command_small">
+                                    php artisan migrate
+                                </p>
+                                يقوم هذا الأمر بإنشاء الجدول في قاعدة البيانات وفقًا لما هو معرف في الهجرة.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- ==================== card ::: ================== -->
+                    <!-- ==================== card :::  البذر================== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/seeder.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Seeder
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">البذر
+                                    </span> </span>
+                                <span class="text-blue-700">Seeder</span>
                             </div>
-                            <h2 class="class_title_by_arabic">البذر:</h2>
                             <span class="run_command">
                                 <span class="text-amber-700">Php</span> artisan make:seeder <span>UserSeeder</span>
                             </span>
@@ -683,46 +1134,148 @@
                                 <span><span class="text-amber-700">Php</span> artisan db:seed
                                 </span> <br> </span>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                في Laravel، *Seeder* هو جزء من نظام توليد البيانات الوهمية أو الأساسية لقاعدة البيانات.
+                                يتيح لك Seeder إدخال بيانات تجريبية في جداول قاعدة البيانات بسرعة وسهولة، سواء كانت
+                                بيانات لاختبار التطبيق أو بيانات ثابتة ستحتاجها بعد نشر التطبيق. <br>
+                                ### لماذا نستخدم Seeder؟ <br>
+                                - **التجربة والاختبار**: في مراحل تطوير التطبيق، يمكنك استخدام Seeder لإضافة بيانات
+                                تجريبية (مثل المستخدمين الوهميين، المنتجات، إلخ) حتى تتمكن من اختبار ميزات التطبيق.
+                                - **بيانات ثابتة**: قد تحتاج إلى بعض البيانات الثابتة عند تشغيل التطبيق، مثل بيانات عن
+                                الدول أو الفئات الأساسية للمنتجات، وهذه البيانات يمكن توليدها باستخدام Seeder بدلاً من
+                                إدخالها يدويًا. <br>
+                                ### كيفية استخدام Seeder في Laravel
+                                يمكنك إنشاء Seeder باستخدام الأمر التالي في الـ Terminal:
+                                <p class="run_command_small">
+                                    php artisan make:seeder UserSeeder
+                                </p>
+                                سيتم إنشاء ملف Seeder جديد باسم `UserSeeder` في مجلد `database/seeders`. <br>
+                                ### مثال على استخدام Seeder <br>
+                                بعد إنشاء Seeder، افتح الملف وسترى دالة `run`، وهي الدالة التي يتم وضع تعليمات إدخال
+                                البيانات بداخلها. لنفترض أننا نريد إنشاء مستخدمين تجريبيين، يمكننا كتابة الكود التالي
+                                داخل دالة `run`: <br>
+
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function run()
+                                    { <br>
+                                    DB::table('users')->insert([
+                                    'name' => 'John Doe',
+                                    'email' => 'john@example.com',
+                                    'password' => bcrypt('password'),
+                                    ]); <br>
+                                    DB::table('users')->insert([
+                                    'name' => 'Jane Smith',
+                                    'email' => 'jane@example.com',
+                                    'password' => bcrypt('password'),
+                                    ]);
+                                    }
+                                </p>
+                                ### تشغيل Seeder
+                                لتشغيل Seeder، يمكنك استخدام الأمر التالي:
+                                <div p="run_command_small">
+                                    php artisan db:seed --class=UserSeeder
+                                </div>
+                                إذا كنت تريد تشغيل جميع الـ Seeders في المشروع دفعة واحدة، يمكنك استخدام:
+                                <div p="run_command_small">
+                                    php artisan db:seed
+                                </div>
+                                ### استخدام Seeders مع الـ Factories
+                                يمكنك أيضًا استخدام الـ *Factories* لتوليد كميات كبيرة من البيانات الوهمية بسهولة. على
+                                سبيل المثال، يمكننا تعديل `UserSeeder` ليقوم بتوليد 10 مستخدمين باستخدام Factory
+                                كالتالي:
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function run()
+                                    {
+                                    \App\Models\User::factory(10)->create();
+                                    }
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- ==================== card ::: ================== -->
+                    <!-- ==================== card :: المصادقة ================== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/auth_finger.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Authentication </div>
-                            <h2 class="class_title_by_arabic">المصادقة:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span
+                                        class="text-pink-700">المصادقة
+                                    </span> </span>
+                                <span class="text-blue-700">Authentication</span>
+                            </div>
+                            <p class="class_p">
+                                نظام المصادقة في Laravel يُعتبر من أقوى الأنظمة التي توفر حماية عالية وسهولة في
+                                الاستخدام للمطورين. يتيح لك نظام المصادقة إدارة تسجيل الدخول والخروج، وتسجيل المستخدمين،
+                                والتحقق من البريد الإلكتروني، وتغيير كلمات المرور وغيرها من الأمور المتعلقة بالمصادقة،
+                                وذلك بسهولة وسرعة.
+                            </p>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                مميزات نظام المصادقة في Laravel <br>
+                                توفير الأمن: Laravel يوفر ميزات أمنية متعددة، مثل تشفير كلمة المرور باستخدام bcrypt
+                                والمصادقة الثنائية. <br>
+                                سهولة التخصيص: يمكنك تخصيص نظام المصادقة ليناسب احتياجات مشروعك، سواء كنت تريد إضافة
+                                خصائص أو تغييرات على واجهة المستخدم. <br>
+                                التحكم بالجلسات: يمكنك إدارة جلسات المستخدمين والتحكم في المدة الزمنية للجلسة. <br>
+                                دعم واجهات متنوعة: سواء كنت تستخدم Vue أو React أو Livewire أو Inertia، يدعم Laravel
+                                واجهات مصادقة متوافقة مع هذه المكتبات.
+                            </div>
                         </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: حزم المصادقة =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/laravel.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                Packages For Auth </div>
-                            <h2 class="class_title_by_arabic">مكتبات المصادقة:</h2>
-                            <span class="note_indigo">
-                                هناك الكثير من المكتبات التي يتم تنزيلها بشكل آلي للمصادقة.، وكل مكتبة لها مميزاتها في
-                                إدارة التطبيق..
-                            </span>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">حزم
+                                        المصادقة
+                                    </span> </span>
+                                <span class="text-blue-700">Packages For Auth</span>
+                            </div>
                             <ul class="class_ul">
                                 <li> Custom Auth </li>
+                                <li>Breeze</li>
+                                <li>Fortify</li>
+                                <li>Jetstream</li>
+                                <li>Socialite</li>
+                                <li>passport</li>
+                                <li>Sanctum</li>
                                 <li>laravel/ui</li>
                                 <li>Laratrust</li>
-                                <li>Breeze</li>
-                                <li>Jetstream</li>
                             </ul>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                كيفية اختيار الحزمة الأنسب <br>
+                                Laravel Breeze: مناسب للتطبيقات البسيطة التي تحتاج لمصادقة أساسية. <br>
+                                Laravel Fortify: ممتاز إذا كنت تحتاج إلى مزيد من التحكم والميزات الأمنية دون الحاجة
+                                لواجهة جاهزة. <br>
+                                Laravel Jetstream: خيار قوي إذا كنت تحتاج إلى ميزات متقدمة وتفاعل واجهة مع مستخدمين
+                                متعددين أو فرق. <br>
+                                Socialite: مفيد إذا أردت إضافة مصادقة باستخدام الشبكات الاجتماعية. <br>
+                                Passport: الأفضل لإنشاء RESTful API يحتاج إلى OAuth2. <br>
+                                Sanctum: مثالي لتطبيقات SPAs وAPIs الصغيرة التي تتطلب مصادقة باستخدام Tokens بسيطة.
+                            </div>
                         </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: مصادقة خاصة =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/custom_auth.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                custom Auth </div>
-                            <h2 class="class_title_by_arabic"> المصادقة:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">حزم
+                                        مصادقة خاصة
+                                    </span> </span>
+                                <span class="text-blue-700">custom Auth</span>
+                            </div>
+
                             <div class="class_sub_title">
                                 إنشاء ملفي:
                                 login.blade.php
@@ -736,7 +1289,7 @@
                             <div class="class_sub_title">
                                 تسجيل الدخول جديد :
                             </div>
-                            <p dir="ltr" class="class_p_r">
+                            <p dir="ltr" class="class_p_code_md">
                                 public function create() {<br>
                                 return view('admin.auth.register’); }<br>
                                 public function store(Request $request) {<br>
@@ -749,7 +1302,7 @@
                             <div class="class_sub_title">
                                 الدخول :
                             </div>
-                            <p dir="ltr" class="class_p_r">
+                            <p dir="ltr" class="class_p_code_md">
                                 public function showlogin() {
                                 return view('admin.auth.login’); }<br>
 
@@ -766,30 +1319,200 @@
                             <div class="class_sub_title">
                                 صفحة لوحة التحكم :
                             </div>
-                            <p dir="ltr" class="class_p_r">
+                            <p dir="ltr" class="class_p_code_md">
                                 public function index() {<br>
                                 return view('admin.dashboard’); }
                             </p>
                             <div class="class_sub_title">
                                 الخروج :
                             </div>
-                            <p dir="ltr" class="class_p_r">
+                            <p dir="ltr" class="class_p_code_md">
                                 public function logout() {<br>
                                 Auth::logout(); return redirect('login’); }
                             </p>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                لإعداد نظام مصادقة خاص في Laravel، يمكنك تخصيص خطوات تسجيل الدخول وتسجيل المستخدمين
+                                والتحقق من الهوية، بدلاً من الاعتماد على الأنظمة الجاهزة. إليك خطوات إعداد نظام مصادقة
+                                مخصص من البداية: <br>
+                                ### 1. **إعداد قاعدة البيانات**
+                                أول خطوة هي إعداد قاعدة بيانات للمستخدمين. تأكد من إعداد قاعدة البيانات في ملف `.env`،
+                                ثم أنشئ جدول المستخدمين: <br>
+                                <p class="run_command_small">
+                                    php artisan make:migration create_custom_users_table
+                                </p>
+                                افتح ملف الهجرة الذي تم إنشاؤه، وقم بإضافة الأعمدة التي تحتاجها في جدول المستخدمين، مثل
+                                `name`، `email`، و`password`:
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function up()
+                                    {
+                                    Schema::create('custom_users', function (Blueprint $table) { <br>
+                                    $table->id(); <br>
+                                    $table->string('name'); <br>
+                                    $table->string('email')->unique(); <br>
+                                    $table->string('password'); <br>
+                                    $table->timestamps(); <br>
+                                    });
+                                    }
+                                </p>
+                                ثم قم بتشغيل الهجرة لإنشاء الجدول:
+
+                                <p class="run_command_small">
+                                    php artisan migrate
+                                </p>
+                                ### 2. **إنشاء نموذج المستخدم (User Model)**
+                                أنشئ نموذجًا (Model) خاصًا بجدول المستخدمين. يمكنك استخدام الأمر التالي:
+                                <p class="run_command_small">
+                                    php artisan make:model CustomUser
+                                </p>
+                                افتح نموذج `CustomUser` وأضف إعدادات الحماية المناسبة للأعمدة التي سيتم ملؤها. على سبيل
+                                المثال:
+                                <p class="class_p_code_s">
+                                    class CustomUser extends Authenticatable
+                                    {
+                                    protected $table = 'custom_users';
+                                    protected $fillable = [
+                                    'name',
+                                    'email',
+                                    'password',
+                                    ];
+                                    protected $hidden = [
+                                    'password',
+                                    ];
+                                    }
+                                </p>
+                                ### 3. **إنشاء مسارات (Routes) مخصصة للمصادقة**
+                                افتح ملف `web.php` داخل مجلد `routes`، وأضف مسارات مخصصة لتسجيل الدخول وتسجيل المستخدمين
+                                وتسجيل الخروج. <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    use App\Http\Controllers\AuthController;
+                                    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+                                    Route::post('/login', [AuthController::class, 'login']);
+                                    Route::get('/register', [AuthController::class,
+                                    'showRegistrationForm'])->name('register');
+                                    Route::post('/register', [AuthController::class, 'register']);
+                                    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+                                </p>
+                                ### 4. **إنشاء AuthController للتحكم في عمليات المصادقة** <br>
+                                أنشئ وحدة تحكم (Controller) للمصادقة: <br>
+                                <p class="run_command_small">
+                                    php artisan make:controller AuthController
+                                </p>
+                                ثم افتح `AuthController`، وأضف دوال لعرض النماذج وتسجيل المستخدمين وتسجيل الدخول
+                                والخروج. <br>
+                                #### 1. عرض نموذج التسجيل <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function showRegistrationForm()
+                                    {
+                                    return view('auth.register');
+                                    }
+                                </p>
+                                #### 2. تسجيل المستخدم
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function register(Request $request)
+                                    {
+                                    $request->validate([
+                                    'name' => 'required|string|max:255',
+                                    'email' => 'required|string|email|max:255|unique:custom_users',
+                                    'password' => 'required|string|min:8|confirmed',
+                                    ]); <br>
+
+                                    $user = CustomUser::create([
+                                    'name' => $request->name,
+                                    'email' => $request->email,
+                                    'password' => bcrypt($request->password),
+                                    ]); <br>
+
+                                    Auth::login($user);
+
+                                    return redirect()->route('home');
+                                    }
+                                </p>
+                                #### 3. عرض نموذج تسجيل الدخول <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function showLoginForm()
+                                    {
+                                    return view('auth.login');
+                                    }
+                                </p>
+                                #### 4. تسجيل الدخول <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function login(Request $request)
+                                    {
+                                    $credentials = $request->only('email', 'password'); <br>
+                                    if (Auth::attempt($credentials)) {
+                                    return redirect()->route('home');
+                                    } <br>
+                                    return back()->withErrors([
+                                    'email' => 'The provided credentials do not match our records.',
+                                    ]);
+                                    }
+                                </p>
+                                #### 5. تسجيل الخروج <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    public function logout()
+                                    {
+                                    Auth::logout();
+                                    return redirect()->route('login');
+                                    }
+                                </p>
+                                ### 5. **إنشاء واجهات المستخدم لنماذج المصادقة** <br>
+                                يمكنك إنشاء قوالب Blade لعرض نماذج تسجيل الدخول والتسجيل. <br>
+                                #### نموذج تسجيل الدخول (`resources/views/auth/login.blade.php`) <br>
+                                <pre>
+                                    <!-- <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <label>Email:</label>
+                                    <input type="email" name="email" required>
+                                    <label>Password:</label>
+                                    <input type="password" name="password" required>
+                                    <button type="submit">Login</button>
+                                </form> -->
+                                </pre>
+                                #### نموذج التسجيل (`resources/views/auth/register.blade.php`)
+                                <pre>
+                                <!-- <form method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <label>Name:</label>
+                                    <input type="text" name="name" required>
+                                    <label>Email:</label>
+                                    <input type="email" name="email" required>
+                                    <label>Password:</label>
+                                    <input type="password" name="password" required>
+                                    <label>Confirm Password:</label>
+                                    <input type="password" name="password_confirmation" required>
+                                    <button type="submit">Register</button>
+                                </form> -->
+                            </pre>
+
+                                ### 6. **حماية المسارات باستخدام Middleware** <br>
+                                لتقييد الوصول إلى صفحات معينة على المستخدمين المسجلين فقط، يمكنك استخدام الـ Middleware
+                                `auth` على مسارات معينة:
+                                <p dir="ltr" class="class_p_code_s">
+                                    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+                                </p>
+                                ### **النتيجة**
+                                بهذا النظام المخصص، يمكنك إدارة عملية المصادقة بشكل كامل، بما في ذلك عرض النماذج وتسجيل
+                                المستخدمين وتسجيل الدخول والخروج، مع إمكانية تخصيص كامل للواجهات والتحكم بقاعدة
+                                البيانات.
+                            </div>
                         </div>
                     </div>
 
                     <!-- =============== Card :: =============== -->
 
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: laravel Ui =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/auth.png" alt="">
                         <div class="class_content">
                             <div class="class_title">
-                                <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                laravel Ui
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">حزم
+                                        مكتبة خاصة بلارافيل
+                                    </span> </span>
+                                <span class="text-blue-700">laravel Ui</span>
                             </div>
                             <h2 class="class_title_by_arabic">مكتبة خاصة بلارافيل:</h2>
                             <span class="run_command">
@@ -804,15 +1527,91 @@
                                 Auth::routes(['register' => false]);
                             </div>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                `Laravel UI` هي حزمة توفر واجهات مصادقة جاهزة تعتمد على Bootstrap وVue.js أو React.js،
+                                وتعتبر خيارًا مثاليًا لإعداد نظام مصادقة أساسي باستخدام واجهات بسيطة في Laravel. عند
+                                استخدام `Laravel UI`، يمكنك إنشاء عمليات المصادقة مثل تسجيل الدخول والتسجيل وإعادة تعيين
+                                كلمة المرور بشكل سريع. <br>
+                                ### تثبيت Laravel UI <br>
+                                لإعداد Laravel UI في تطبيق Laravel، اتبع هذه الخطوات: <br>
+                                1. **تثبيت الحزمة**: <br>
+                                أضف حزمة Laravel UI إلى مشروعك باستخدام Composer: <br>
+                                <p class="run_command_small">
+                                    composer require laravel/ui
+                                </p>
+                                2. **تثبيت واجهة المصادقة**: <br>
+                                بعد تثبيت الحزمة، يمكنك إعداد واجهة المصادقة باستخدام Bootstrap أو Vue.js أو React.js.
+                                <br>
+                                اختر واحدًا من الأوامر التالية بناءً على تفضيلاتك: <br>
+                                - **مع Bootstrap**:
+                                <p class="run_command_small">
+                                    php artisan ui bootstrap --auth
+                                </p>
+                                - **مع Vue.js**: <br>
+                                <p class="run_command_small">
+                                    php artisan ui vue --auth
+                                </p>
+                                - **مع React.js**: <br>
+                                <p class="run_command_small">
+                                    php artisan ui react --auth
+                                </p>
+                                الخيار `--auth` يضيف واجهات المصادقة تلقائيًا، بما في ذلك صفحات تسجيل الدخول والتسجيل
+                                وإعادة تعيين كلمة المرور. <br>
+                                3. **تثبيت JavaScript Packages**: <br>
+                                بعد إعداد واجهات المصادقة، قم بتثبيت الحزم الأمامية (Front-end) المطلوبة باستخدام:
+                                <p class="class_p_code_s">
+                                    npm install
+                                    npm run dev
+                                </p>
+                                هذا سيقوم بترجمة وتهيئة ملفات CSS وJavaScript للواجهة الأمامية. <br>
+                                ### تشغيل الترحيلات <br>
+                                تأكد من إعداد قاعدة البيانات في ملف `.env`، ثم قم بتشغيل الترحيلات لإنشاء جداول
+                                المستخدمين المطلوبة بواسطة نظام المصادقة: <br>
+                                <p class="run_command_small">
+                                    php artisan migrate
+                                </p>
+                                ### الميزات التي توفرها Laravel UI <br>
+                                عند تشغيل Laravel UI مع خيار `--auth`، يتم إعداد ما يلي: <br>
+                                - **صفحات تسجيل الدخول**: صفحة دخول مخصصة يمكن الوصول إليها عبر `/login`. <br>
+                                - **صفحات التسجيل**: صفحة تسجيل مستخدم جديد عبر `/register`. <br>
+                                - **صفحات إعادة تعيين كلمة المرور**: يتيح للمستخدمين إعادة تعيين كلمات المرور عبر <br>
+                                `/password/reset`. <br>
+                                - **صفحات التحقق من البريد الإلكتروني** (اختياري): توفر عملية تحقق من البريد الإلكتروني
+                                للمستخدمين. <br>
+                                ### تخصيص الواجهات <br>
+                                يمكنك تخصيص صفحات المصادقة بسهولة عن طريق تحرير الملفات الموجودة في مجلد
+                                `resources/views/auth`. على سبيل المثال: <br>
+                                - **نموذج تسجيل الدخول**: `resources/views/auth/login.blade.php` <br>
+                                - **نموذج التسجيل**: `resources/views/auth/register.blade.php`<br>
+                                - **نموذج إعادة تعيين كلمة المرور**: `resources/views/auth/passwords/reset.blade.php`
+                                <br>
+                                يمكنك تعديل التصميم والعناصر الموجودة في هذه القوالب لتناسب تصميم موقعك. <br>
+                                ### استخدام Middleware لحماية المسارات <br>
+                                يمكنك استخدام Middleware `auth` لحماية المسارات الخاصة، بحيث لا يمكن الوصول إليها إلا
+                                للمستخدمين المسجلين:
+                                <p class="class_p_code_s">
+                                    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+                                </p>
+                                ### ملاحظات إضافية <br>
+                                `Laravel UI` مثالي للتطبيقات التي تحتاج إلى نظام مصادقة بسيط ومتكامل. إذا كنت ترغب في
+                                ميزات متقدمة مثل المصادقة الثنائية (2FA) أو إدارة فرق العمل، فقد ترغب في استخدام حزمة
+                                **Laravel Jetstream** التي توفر ميزات مصادقة أكثر تطورًا.
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- =============== Card :: =============== -->
+                    <!-- =============== Card :: حزمة لارا ترست =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/laratrust.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                laratrust </div>
-                            <h2 class="class_title_by_arabic">مكتبة:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        حزمة لارا ترست
+                                    </span> </span>
+                                <span class="text-blue-700">laratrust</span>
+                            </div>
                             <span class="run_command">
                                 <span class="text-amber-700">composer</span> require santigarcor/laratrust
                             </span>
@@ -821,15 +1620,131 @@
                             <div class="run_command_small">composer dump-autoload</div>
                             <div class="run_command_small">php artisan migrate</div>
                         </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                `لارا ترست` (Laratrust) هي حزمة لإدارة الأدوار والصلاحيات (Roles & Permissions) في
+                                Laravel، تسهّل إنشاء نظام إدارة المستخدمين عبر تعيين أدوار وصلاحيات لهم. تستخدم الحزمة
+                                غالبًا عند بناء تطبيقات تتطلب إدارة وصول المستخدمين وتحديد ما يمكنهم فعله داخل التطبيق،
+                                مثل الأدوار الإدارية أو القيود حسب مستوى المستخدم. <br>
+                                ### ميزات Laratrust <br>
+                                - **إدارة الأدوار**: إنشاء وتخصيص أدوار المستخدمين (مثل "مدير"، "محرر"، "مستخدم") وتحديد
+                                مجموعة من الصلاحيات لكل دور. <br>
+                                - **إدارة الصلاحيات**: إمكانية تعيين صلاحيات مخصصة لكل دور، مع إمكانية تخصيص صلاحيات
+                                إضافية للمستخدمين. <br>
+                                - **تحكم شامل بالأذونات**: يمكنك منع أو السماح للمستخدمين بتنفيذ إجراءات معينة بناءً على
+                                أدوارهم وصلاحياتهم. <br>
+                                - **دعم تعدد الفرق**: يتيح Laratrust استخدام نفس الأدوار والصلاحيات ضمن فرق أو أقسام
+                                مختلفة داخل التطبيق. <br>
+                                ### كيفية تثبيت وإعداد Laratrust <br>
+                                إليك خطوات تثبيت وإعداد Laratrust في مشروع Laravel: <br>
+                                1. **تثبيت الحزمة**: <br>
+                                قم بتثبيت الحزمة باستخدام Composer: <br>
+                                <p class="run_command_small">
+                                    composer require santigarcor/laratrust
+                                </p>
+                                2. **تثبيت Laratrust**: <br>
+                                بعد تثبيت الحزمة، شغّل أوامر التثبيت: <br>
+                                <p class="run_command_small">
+                                    php artisan laratrust:install
+                                </p>
+                                سيطلب منك الاختيار بين إعداد Laratrust بأدوار وصلاحيات مع أو بدون فرق (Teams)، حدد
+                                الخيار الذي يناسب احتياجاتك. <br>
+                                3. **تشغيل الترحيلات**: <br>
+                                بعد إعداد الحزمة، ستحتاج إلى ترحيل الجداول المطلوبة للأدوار والصلاحيات. شغّل الأمر
+                                التالي لإنشاء الجداول في قاعدة البيانات:
+                                <p class="run_command_small">
+                                    php artisan migrate
+                                </p>
+                                4. **تهيئة نموذج المستخدم (User Model)**: <br>
+                                افتح نموذج `User` في `App\Models\User` وقم بإضافة السمة `LaratrustUserTrait` لتمكين
+                                إدارة الأدوار والصلاحيات لهذا النموذج: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    use Laratrust\Traits\LaratrustUserTrait;
+                                    class User extends Authenticatable
+                                    {
+                                    use LaratrustUserTrait;
+                                    // بقية الإعدادات
+                                    }
+                                </p>
+                                ### إنشاء الأدوار والصلاحيات <br>
+                                يمكنك إنشاء الأدوار والصلاحيات إما باستخدام الأوامر أو مباشرة في الشيفرة البرمجية. <br>
+                                #### 1. إنشاء الأدوار والصلاحيات برمجيًا <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    use App\Models\Role;
+                                    use App\Models\Permission;
+                                    // إنشاء دور جديد
+                                    $adminRole = Role::create(['name' => 'admin']);
+                                    // إنشاء صلاحية جديدة
+                                    $editUsersPermission = Permission::create(['name' => 'edit-users']);
+                                    // تعيين الصلاحية للدور
+                                    $adminRole->attachPermission($editUsersPermission);
+                                </p>
+
+                                #### 2. تعيين الأدوار والصلاحيات للمستخدم
+                                <p dir="ltr" class="class_p_code_s">
+                                    use App\Models\User;
+                                    $user = User::find(1);
+                                    // تعيين دور للمستخدم
+                                    $user->attachRole('admin');
+                                    // تعيين صلاحية مباشرة للمستخدم
+                                    $user->attachPermission('edit-users');
+                                </p>
+                                ### استخدام الأدوار والصلاحيات في التحكم بالوصول <br>
+                                يمكنك استخدام Laratrust للتحقق من الأدوار والصلاحيات داخل الشيفرة بسهولة: <br>
+                                - **التحقق من دور المستخدم**: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    if (auth()->user()->hasRole('admin')) {
+                                    // المستخدم لديه دور "admin"
+                                    }
+                                </p>
+                                - **التحقق من صلاحية المستخدم**: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    if (auth()->user()->can('edit-users')) {
+                                    // المستخدم لديه صلاحية "edit-users"
+                                    }
+                                </p>
+                                - **التحقق من دور أو صلاحية متعددة**: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    if (auth()->user()->hasRole(['admin', 'editor'])) {
+                                    // المستخدم لديه دور "admin" أو "editor"
+                                    }
+                                    if (auth()->user()->can(['create-posts', 'edit-posts'])) {
+                                    // المستخدم لديه الصلاحيات "create-posts" و "edit-posts"
+                                    }
+                                </p>
+                                ### حماية المسارات باستخدام Middleware <br>
+                                لتقييد الوصول إلى مسارات معينة بناءً على الأدوار أو الصلاحيات، يمكنك إضافة Middleware
+                                مخصص في ملف `web.php`: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    Route::group(['middleware' => ['role:admin']], function () {
+                                    Route::get('/admin', [AdminController::class, 'index']);
+                                    });
+                                </p>
+                                أو باستخدام الصلاحيات: <br>
+                                <p dir="ltr" class="class_p_code_s">
+                                    Route::group(['middleware' => ['permission:edit-users']], function () {
+                                    Route::get('/users/edit', [UserController::class, 'edit']);
+                                    });
+                                </p>
+                                ### الخلاصة <br>
+                                حزمة `Laratrust` توفر لك إطارًا قويًا وسهلاً لإدارة الأدوار والصلاحيات في Laravel. تتيح
+                                لك الحزمة إدارة وصول المستخدمين بمرونة، سواء من خلال الأدوار أو الصلاحيات أو الفرق، مما
+                                يجعلها خيارًا مثاليًا لتطبيقات الويب التي تحتاج إلى إدارة دقيقة للصلاحيات.
+                            </div>
+                        </div>
                     </div>
 
                     <!-- =============== Card :: =============== -->
                     <div dir="rtl" class="class_div_img">
                         <img class="class_img" src="assets/images/breez.png" alt="">
                         <div class="class_content">
-                            <div class="class_title"> <i class="far fa-check-circle text-blue-400"></i> &nbsp;
-                                laravel Breeze </div>
-                            <h2 class="class_title_by_arabic">مكتبة:</h2>
+                            <div class="class_title">
+                                <span> <i class="far fa-check-circle text-blue-600"></i> <span class="text-pink-700">
+                                        حزمة بريز
+                                    </span> </span>
+                                <span class="text-blue-700">laravel Breeze</span>
+                            </div>
                             <span class="run_command">
                                 <span class="text-amber-700">composer</span> require laravel/breeze --dev
                             </span>
@@ -847,6 +1762,110 @@
                                 return redirect()->route('auth.login')->with('errors','registration<br>
                                 is closed at this moment please go back later'); }
                             </p>
+                        </div>
+                        <div class="class_note_gpt">
+                            <div class="note_indigo">جواب Chat GPT 3.5:</div>
+                            <div class="text-sm p-2">
+                                `Laravel Breeze` هي حزمة مصادقة خفيفة الوزن لـ Laravel، توفر واجهات بسيطة وسهلة
+                                الاستخدام مع التركيز على المكونات الأساسية للمصادقة. تُستخدم عادةً لبدء نظام مصادقة سريع
+                                وسهل في التطبيقات الجديدة، وتتضمن أساسيات مثل تسجيل الدخول، والتسجيل، وإعادة تعيين كلمة
+                                المرور، وتأكيد البريد الإلكتروني.
+
+                                ### ميزات Laravel Breeze
+
+                                - **نظام مصادقة أساسي**: تتضمن ميزات المصادقة الأساسية مثل تسجيل الدخول، التسجيل، إعادة
+                                تعيين كلمة المرور، وتأكيد البريد الإلكتروني.
+                                - **واجهة مستخدم بسيطة**: تعتمد على Tailwind CSS، مما يجعل التصميم مريحًا وسهل التخصيص.
+                                - **دعم الفئات الحديثة**: مثل استخدام Laravel Sanctum للمصادقة الخاصة بالـ APIs، مما
+                                يسهل تطوير التطبيقات الحديثة.
+                                - **سهولة التخصيص**: يتيح لك Breeze تخصيص الواجهة والوظائف بسهولة، ويمكنك تحسين التصميم
+                                أو إضافة ميزات إضافية.
+
+                                ### تثبيت وإعداد Laravel Breeze
+
+                                اتبع هذه الخطوات لتثبيت وإعداد Laravel Breeze في مشروع Laravel جديد أو حالي:
+
+                                1. **تثبيت Laravel Breeze**:
+                                قم بتثبيت الحزمة باستخدام Composer:
+                                ```bash
+                                composer require laravel/breeze --dev
+                                ```
+
+                                2. **تثبيت ملفات Breeze**:
+                                بعد تثبيت الحزمة، قم بتثبيت ملفات المصادقة والأجزاء الأمامية (Frontend scaffolding)
+                                باستخدام الأمر التالي:
+                                ```bash
+                                php artisan breeze:install
+                                ```
+
+                                3. **تثبيت JavaScript Packages**:
+                                قم بتثبيت الحزم الأمامية التي يعتمد عليها التصميم باستخدام npm، وشغّل الأوامر لتجميع
+                                ملفات CSS وJavaScript:
+                                ```bash
+                                npm install
+                                npm run dev
+                                ```
+
+                                4. **تشغيل الترحيلات**:
+                                Breeze يقوم بإضافة جميع الجداول التي تحتاجها المصادقة في قاعدة البيانات، لذا تأكد من
+                                إعداد قاعدة البيانات في ملف `.env`، ثم شغّل الترحيلات:
+                                ```bash
+                                php artisan migrate
+                                ```
+
+                                ### مكونات المصادقة في Breeze
+
+                                بعد تثبيت Breeze، ستجد مجموعة من مكونات المصادقة التي يتم إعدادها تلقائيًا وتشمل:
+
+                                - **تسجيل الدخول**: يمكنك الوصول إلى صفحة تسجيل الدخول عبر `/login`.
+                                - **التسجيل**: تتوفر صفحة تسجيل المستخدمين الجدد عبر `/register`.
+                                - **إعادة تعيين كلمة المرور**: يتيح للمستخدمين إعادة تعيين كلمة المرور عبر البريد
+                                الإلكتروني.
+                                - **تأكيد البريد الإلكتروني** (اختياري): يمكن تفعيل خيار التحقق من البريد الإلكتروني
+                                للمستخدمين قبل تفعيل حساباتهم.
+
+                                ### تخصيص الواجهات
+
+                                تُنشئ Laravel Breeze قوالب Blade جاهزة في مجلد `resources/views/auth`، مما يسمح لك
+                                بتعديل وتخصيص صفحات تسجيل الدخول والتسجيل وإعادة تعيين كلمة المرور.
+
+                                ### إعداد المصادقة باستخدام APIs
+
+                                إذا كنت ترغب في إعداد مصادقة لـ API، يمكنك دمج Breeze مع **Laravel Sanctum** الذي يأتي
+                                مدمجًا ويستخدم في Breeze للمصادقة عبر الرموز (tokens).
+
+                                ### أمثلة على استخدام المصادقة في Breeze
+
+                                - **حماية المسارات باستخدام Middleware**:
+                                يمكنك تقييد الوصول إلى المسارات عبر Middleware `auth` للسماح فقط للمستخدمين المسجلين
+                                بالوصول إلى صفحات معينة:
+
+                                ```php
+                                Route::get('/dashboard', function () {
+                                return view('dashboard');
+                                })->middleware(['auth']);
+                                ```
+
+                                - **التحقق من حالة المصادقة**:
+                                يمكنك استخدام المساعدات (helpers) للتحقق من حالة تسجيل دخول المستخدم:
+
+                                ```php
+                                if (auth()->check()) {
+                                // المستخدم مسجل الدخول
+                                }
+                                ```
+
+                                ### ملاحظات إضافية
+
+                                - **تخصيص تصميم Tailwind CSS**: يعتمد Breeze على Tailwind CSS، وهو إطار عمل مرن وسهل
+                                التعديل، مما يسمح لك بتخصيص التصميم بأكمله.
+                                - **بنية خفيفة**: Breeze هو خيار مثالي للتطبيقات التي تتطلب مصادقة بسيطة، ويُعتبر نقطة
+                                انطلاق ممتازة للمشاريع التي لا تحتاج إلى ميزات معقدة مثل المصادقة الثنائية أو إدارة
+                                الفرق.
+
+                                **ملخص**: Laravel Breeze مثالي للتطبيقات الصغيرة والمتوسطة التي تتطلب إعداد نظام مصادقة
+                                بسيط وقابل للتعديل.
+                            </div>
                         </div>
                     </div>
 
